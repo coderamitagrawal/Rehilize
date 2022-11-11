@@ -10,10 +10,10 @@ const PublicRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      {/* <Route path="/about" element={<About />} />
+      <Route path="/about" element={<About />} />
       <Route path="/candidate" element={<Candidate />} />
       <Route path="/blog" element={<Blog />} />
-      <Route path="/employer" element={<Employer />} /> */}
+      <Route path="/employer" element={<Employer />} />
     </Routes>
   );
 };
