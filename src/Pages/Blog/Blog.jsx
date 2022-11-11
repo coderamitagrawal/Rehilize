@@ -7,17 +7,17 @@ import { NavLink } from "react-bootstrap";
 export const Blog = () => {
   return (
     <>
-      <div class="main-wrapper">
-        <div class="container-fluid">
-          <h1>Title</h1>
-          <div class="row">
-            <div class="col-md-4">
-              <div class="blog-card-thumb">
+      <div className="main-wrapper blog-wrapper">
+        <div className="container-fluid">
+          <h1 className="text-uppercase">Title</h1>
+          <div className="row">
+            <div className="col-md-4">
+              <div className="blog-card-thumb">
                 <img src={blogImage} alt="blog" width="100%" />
               </div>
             </div>
-            <div class="col-md-8">
-              <p class="blog-content">
+            <div className="col-md-8">
+              <p className="blog-content">
                 Lorem ipsum dolor sit amet. Aut ratione iste ut dolore culpa rem
                 sint amet et fugiat corporis ut ratione dicta est illum magni
                 nam necessitatibus possimus. Et perspiciatis praesentium qui
@@ -31,18 +31,35 @@ export const Blog = () => {
               </p>
             </div>
           </div>
-          <div class="row">
-            <div class="col-sm-12">
-              <h1 class="title-big-primary mt-5 mb-3 text-center">
+          <div className="row">
+            <div className="col-sm-12">
+              <h1 className="title-big-primary mt-5 mb-3 text-center">
                 Past Articles
               </h1>
             </div>
-            <div class="col-md-10">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="card-wrapper grey-card-bg">
-                    <div class="blog-card-small">
-                      <div class="blog-card-thumb-small">
+            <div className="col-md-12">
+              <div className="row">
+                <div className="col-lg-5">
+                  <div className="card-wrapper dark-grey-card-bg">
+                    <div className="blog-card-small">
+                      <div className="blog-card-thumb-small">
+                        <img src={userOne} title="Dona baker" />
+                      </div>
+                      <div>
+                        <h3 className="card-title">Title</h3>
+                        <p>
+                          Lorem ipsum dolor sit amet. Aut ratione iste ut dolore
+                          culpa rem sint amet et fugiat corporis ut ratione
+                          dicta ----- SNIPPET
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-lg-5">
+                  <div className="card-wrapper dark-grey-card-bg">
+                    <div className="blog-card-small">
+                      <div className="blog-card-thumb-small">
                         <img src={userOne} title="Dona baker" />
                       </div>
                       <div>
@@ -56,40 +73,23 @@ export const Blog = () => {
                     </div>
                   </div>
                 </div>
-                <div class="col-md-6">
-                  <div class="card-wrapper grey-card-bg">
-                    <div class="blog-card-small">
-                      <div class="blog-card-thumb-small">
-                        <img src={userOne} title="Dona baker" />
-                      </div>
-                      <div>
-                        <h3>Title</h3>
-                        <p>
-                          Lorem ipsum dolor sit amet. Aut ratione iste ut dolore
-                          culpa rem sint amet et fugiat corporis ut ratione
-                          dicta ----- SNIPPET
-                        </p>
-                      </div>
-                    </div>
-                  </div>
+                <div className="col-lg-2">
+                  <ul className="blog-category-list">
+                    <li>
+                      <NavLink to="#">Title</NavLink>
+                    </li>
+                    <li>
+                      <NavLink to="#">Title</NavLink>
+                    </li>
+                    <li>
+                      <NavLink to="#">Title</NavLink>
+                    </li>
+                    <li>
+                      <NavLink to="#">Title</NavLink>
+                    </li>
+                  </ul>
                 </div>
               </div>
-            </div>
-            <div class="col-md-2">
-              <ul class="blog-category-list">
-                <li>
-                  <NavLink to="#">Title</NavLink>
-                </li>
-                <li>
-                  <NavLink to="#">Title</NavLink>
-                </li>
-                <li>
-                  <NavLink to="#">Title</NavLink>
-                </li>
-                <li>
-                  <NavLink to="#">Title</NavLink>
-                </li>
-              </ul>
             </div>
           </div>
         </div>

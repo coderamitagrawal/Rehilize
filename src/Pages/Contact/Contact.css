@@ -1,0 +1,169 @@
+.contact-wrapper {
+    background-color: var(--secondry-color);
+    padding-top: 50px;
+    padding-bottom: 50px;  
+}
+.contact-card {
+    padding: 30px 90px;
+    background: var(--bg-white-light-2);
+    border: 1px solid var(--color-black-1);
+    border-radius: 2px;
+    margin-bottom: 10px;
+}
+.contact-card .contact-title {
+    font-family: var(--font-secondry);
+    color: var(--secondary-color);
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 26px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+.contact-card .contact-title.title-small {
+    text-transform: none;
+    font-size: 24px;
+}
+.contact-card .contact-subtitle {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: var(--secondary-color);
+}
+.contact-card .form-group {
+    padding: 0px 15px;
+}
+.contact-card .form-group label {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+    cursor: initial;
+}
+.contact-card .form-group .form-control {
+    min-height: 50px;
+    border-radius: 0;
+    background: var(--bg-white);
+    border: 2px solid var(--bg-gray-light);
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: var(--secondary-color);
+}
+.contact-card .form-group.form-select-box {
+    position: relative;
+}
+.contact-card .form-group.form-select-box::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: url("../../Assets//img/select-icon.svg") no-repeat;
+    right: 25px;
+    top: 18px;
+    pointer-events: none;
+}
+.contact-card .form-group .form-control:focus {
+    box-shadow: none;
+}
+.contact-card .checkbox-row {
+    margin-top: 30px;
+}
+.contact-card .form-label {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 21px;
+    color: var(--secondary-color);
+    font-family: var(--font-secondry);
+}
+.contact-card .form-check {
+    align-items: center;
+    display: inline-flex;
+    margin-right: 40px;
+    flex-direction: row;
+}
+.contact-card .form-check .form-check-label {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 21px;
+    color: var(--secondary-color);
+    font-family: var(--font-secondry);
+}
+.contact-card .form-check .form-check-input  {
+    width: 35px;
+    min-width: 35px;
+    height: 35px;
+    margin-left: 20px;
+    border-radius: 0;
+}
+.contact-card .form-check .form-check-input:focus {
+    box-shadow: none;
+}
+.contact-card .form-check.check-right { 
+    flex-direction: row-reverse;
+    gap: 25px;
+    padding: 0;
+    margin: 0;
+    align-items: flex-start;
+}
+.contact-card .form-check.check-right .form-check-label {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    font-family: var(--font-primary);    
+}
+.contact-card .form-check.check-right .form-check-input {
+    margin-left: 0;
+}
+.contact-submit .btn {
+    margin: 50px 0px;
+    border-radius: 10px;
+    padding: 20px 80px;
+    min-width: 150px;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 28px;
+}
+.contact-submit .btn:hover {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+/* Responsive */
+@media screen and (max-width: 1440px) {
+	.contact-card {
+        padding: 30px 30px;
+	}
+}
+
+@media screen and (max-width: 991px) {
+	.contact-card {
+        padding: 20px 20px;
+	}
+    .contact-card .contact-title,
+    .contact-card .form-label {
+        font-size: 20px;
+    }
+    .contact-card .form-group label,
+    .contact-card .form-check.check-right .form-check-label {
+        font-size: 14px;
+    }
+    .contact-card .form-group {
+        margin-bottom: 20px;
+    }
+    .contact-card .contact-subtitle,
+    .contact-card .form-group .form-control {
+        font-size: 14px;
+    }
+    .contact-card .form-check.check-right {
+        gap: 10px;
+    }
+    .contact-card .form-check .form-check-label {
+        font-size: 16px;
+        width: 80%;
+    }
+    .contact-submit .btn {
+        font-size: 18px;
+        padding: 20px 40px;
+    }
+}
