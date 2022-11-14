@@ -128,6 +128,11 @@
     background-color: var(--primary-color);
     color: var(--secondary-color);
 }
+.reqError{
+    color: red;
+    margin-top: 2px;
+    font-size: 15px;
+}
 
 /* Responsive */
 @media screen and (max-width: 1440px) {
