@@ -5,6 +5,7 @@ import Home from "../Pages/Home/Home";
 import Candidate from "../Pages/Candidate/Candidate";
 import { Blog } from "../Pages/Blog/Blog";
 import Employer from "../Pages/Employer/Employer";
+import { Contact } from "../Pages/Contact/Contact";
 
 const PublicRoutes = () => {
   return (
@@ -14,6 +15,7 @@ const PublicRoutes = () => {
       <Route path="/candidate" element={<Candidate />} />
       <Route path="/blog" element={<Blog />} />
       <Route path="/employer" element={<Employer />} />
+      <Route path="/contact" element={<Contact />} />
     </Routes>
   );
 };

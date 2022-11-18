@@ -36,6 +36,7 @@
 	letter-spacing: 0.1em;
 	color: var(--secondry-color);
 	mix-blend-mode: normal;
+	min-height: 90px;
 }
 
 .about-content {
@@ -89,6 +90,10 @@
 
 .team-wrapper .card-wrapper h3 span {
 	display: block;
+}
+.team-wrapper .card-wrapper p {
+	padding-left: 0;
+	padding-right: 0;
 }
 
 .team-wrapper .image-box {

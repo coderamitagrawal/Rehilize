@@ -10,40 +10,39 @@ const Header = () => {
   return (
     <div>
       <div className="header-logo text-center">
-        <img src={rhealizeLogo} />
+        <Link to="/">
+          <img src={rhealizeLogo} />
+        </Link>
       </div>
       <section className="header-nav">
         <div className="header-bg">
-          <img src={navBgImage} alt="img" />
+          <img src={navBgImage} alt="img" className="img-fluid" />
         </div>
-        <Navbar expand="lg"
-        >
-        <Navbar.Toggle ><BiMenu aria-controls="basic-navbar-nav" className="menuIcon"/></Navbar.Toggle>
-        <Navbar.Collapse id="basic-navbar-nav">
-        
-        <Nav
-          activeKey="/home"
-          onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
-          className="nav-wrapper"
-        >
-          <Nav.Item>
-            <Link to="/About">About</Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Link to="/Candidate">Candidate</Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Link to="/Employer">Employer</Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Link to="/Blog">Blog</Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Link to="/Contact">Contact</Link>
-          </Nav.Item>
-        </Nav>
-        </Navbar.Collapse>
-        
+        <Navbar expand="lg">
+          <Navbar.Toggle ><BiMenu aria-controls="basic-navbar-nav" className="menuIcon"/></Navbar.Toggle>
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav
+              activeKey="/home"
+              onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
+              className="nav-wrapper"
+            >
+              <Nav.Item>
+                <Link to="/About">About</Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Link to="/Candidate">Candidate</Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Link to="/Employer">Employer</Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Link to="/Blog">Blog</Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Link to="/Contact">Contact</Link>
+              </Nav.Item>
+            </Nav>
+          </Navbar.Collapse>
         </Navbar>
       </section>
     </div>

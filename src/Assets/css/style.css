@@ -7,10 +7,11 @@
 	--font-primary: 'Montserrat', sans-serif;
 	--font-secondry: 'Libre Baskerville';
 	--bgprimary-light: #BEA600;
-	--bgprimary-dark: #13184D;
 	--bg-white: #ffffff;
 	--bg-white-light-1: #F5F5F5;
+	--bg-white-light-2: #E5E5E5;
 	--bg-yellow: #B8AF81;
+	--bg-yellow-8: rgba(184,175,129,0.8);
 	--bg-gray-light: #B2B2B2;
 	--green-light: #87AF81;
 	--title-big: #6AD8D8;
@@ -74,7 +75,7 @@ h1 {
 	padding: 0;
 	font-size: 24px;
 	line-height: 1;
-	background-color: var(--bgprimary-dark);
+	background-color: var(--secondry-color);
 	color: var(--bg-white);
 }
 
@@ -134,12 +135,12 @@ h1 {
 }
 
 .button-light:hover {
-	background-color: var(--bgprimary-dark);
+	background-color: var(--secondry-color);
 	color: var(--primary-color);
 }
 
 .button-dark {
-	background-color: var(--bgprimary-dark);
+	background-color: var(--secondry-color);
 	color: var(--primary-color);
 	border-radius: none;
 	font-style: normal;
@@ -366,96 +367,3 @@ h1 {
 .blog-category-list li:not(:last-child) {
 	padding-bottom: 16px;
 } */
-
-
-@media (max-width: 992px) {
-	.header-nav nav ul li {
-		border: none;
-		display: block;
-		padding: 5px 0;
-	}
-
-	.header-nav nav ul {
-		align-items: flex-start;
-		margin-top: 15px;
-	}
-
-	.grey-card-bg {
-		padding: 1rem;
-	}
-
-	.grey-card-bg p {
-		padding: 10px 0;
-	}
-
-	.about-container p,
-	.grey-card-bg p {
-		font-size: 16px;
-		line-height: 24px;
-	}
-
-	.about-header,
-	.team-wrapper .card-wrapper h3 {
-		font-size: 16px;
-		line-height: 24px;
-		letter-spacing: normal;
-	}
-
-	.about-content {
-		letter-spacing: normal;
-		font-size: 16px;
-	}
-
-	.header-bg img {
-		width: inherit;
-	}
-}
-
-@media (max-width: 640px) {
-	.header-bg img {
-		width: inherit;
-	}
-
-	.grey-card-bg {
-		padding: 1rem;
-	}
-
-	.grey-card-bg p {
-		font-size: 14px;
-	}
-
-	.footer-nav ul li a {
-		font-size: 14px;
-		letter-spacing: normal;
-	}
-
-	.about-header {
-		font-size: 14px;
-	}
-
-	.about-content,
-	.about-container p {
-		letter-spacing: normal;
-		font-size: 14px;
-		line-height: 20px;
-	}
-
-	.team-wrapper {
-		flex-direction: column;
-	}
-
-	.team-wrapper .card-wrapper h3 {
-		font-size: 22px;
-		line-height: 30px;
-		letter-spacing: normal;
-	}
-
-	.copyright {
-		font-size: 12px;
-		line-height: 18px;
-	}
-
-	.header-logo img {
-		max-width: 180px;
-	}
-}

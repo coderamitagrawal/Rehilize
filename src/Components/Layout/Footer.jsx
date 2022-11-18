@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
-    <footer>
+    <footer className="footer-wrapper">
     <div className="footer-nav">
     <ListGroup>
       <ListGroup.Item><Link to="/">Privacy Policy</Link></ListGroup.Item>

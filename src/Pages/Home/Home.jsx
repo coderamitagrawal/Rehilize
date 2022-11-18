@@ -10,27 +10,35 @@ const Home = () => {
         <div className="row">
           <div className="col-md-6">
             <div className="card-wrapper">
-              <h1>Candidate</h1>
-              <div className="grey-card-bg">
+              {/* <h1>Candidate</h1> */}
+              <div className="dark-grey-card-bg">
                 <div className="grey-card-body">
-                  <div className="image-box"></div>
+                  <div className="image-box">
+                    <p>You’re already perfect ... for something.</p>
+                  </div>
                 </div>
-                <a href="#" className="btn button-light w-100">Candidate</a>
-                <p>Lorem ipsum dolor sit amet. Aut ratione iste ut dolore culpa rem sint amet et fugiat corporis ut ratione dicta est illum magni nam necessitatibus possimus. Et perspiciatis praesentium qui natus nihil eos pariatur dolores et obcaecati nisi et quod quasi est sint voluptas.</p>
+                <a href="#" className="btn button-light text-uppercase w-100">Candidate</a>
+                <p>
+                  You have a lot ot offer. We see it.
+                </p>
+                <p>
+                  While you're ready for the challenge of a meaningful career, that work should also rise to your challenge - to meet you where your efforts have energy and purpose.
+                </p>
               </div>
             </div>
           </div>
           <div className="col-md-6">
             <div className="card-wrapper">
-              <h1>Employer</h1>
-              <div className="grey-card-bg">
+              {/* <h1>Employer</h1> */}
+              <div className="dark-grey-card-bg">
                 <div className="grey-card-body">
-                  <div className="image-box"></div>
+                  <div className="image-box">
+                    <p>Are you prepared for perfection?</p>
+                  </div>
                 </div>
-                <a href="#" className="btn button-dark w-100">Employer</a>
-                <p>
-                  Lorem ipsum dolor sit amet. Aut ratione iste ut dolore culpa rem sint amet et fugiat corporis ut ratione dicta est illum magni nam necessitatibus possimus. Et perspiciatis praesentium qui natus nihil eos pariatur dolores et obcaecati nisi et quod quasi est sint voluptas.
-                </p>
+                <a href="#" className="btn button-dark text-uppercase w-100">Employer</a>
+                <p>Hiring defines your organization’s future. So start by considering how your workplace best engages new talent.</p>
+                <p>What if rethinking roles attracted staff that redefined your business opportunities?</p>
               </div>
             </div>
           </div>

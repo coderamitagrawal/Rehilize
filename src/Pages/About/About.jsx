@@ -10,8 +10,8 @@ const About = () => {
       <div class="container-fluid">
         <div class="about-container">
           <h1>ABOUT RHEALIZE</h1>
-          <p>For employers and candidates looking to fulfill a role, Whyworks! provides meaningful connections 
-            because believe that when the right role connects with the right person, you can reach untapped potential.
+          <p>
+            RHEALIZE provides a unique toolset to promote thoughtful discussion and reflection on candidate-fit for role and company at the critical early stages of hiring. Our insights enable friction-free recruitment, employee engagement and succession by uncovering what both employees and the company need to mutually succeed. 
           </p>
           <div class="row">
             <div class="col-md-4">
@@ -60,13 +60,15 @@ const About = () => {
                 </div>
               </div>
               <h3>Dona Baker <span>Founding Partner</span></h3>
-              <p>Dona is one of the company’s management consultants and head of People and Product Development. 
-                She has been an adult educator and facilitator for more than 20 years practicing in Human Resources
-                and interpersonal development for most of her working career. She has written two books,
-                “The Friction-Free Entrepreneur: How to Partner with Others Who Can Do The Stuff You Can’t” and 
-                co-authored “Are You Built to Build?”
+              <p>
+                Dona leads RHEALIZE's People Development and management consulting services.
               </p>
-              <p>Dona is a certified consultant in the Kolbe A™ and related Indexes, PRINT®, Lectica® and CliftonStrengths® assessments and a Certified Talent Management Consultant.</p>
+              <p>
+                She has been an adult educator and facilitator for more than 20 years practicing in Human Resources and interpersonal development for most of her working career. She has authored the book “The Friction Free Entrepreneur” and is co-author of a second book “Are You Built to Build?”
+              </p>
+              <p>
+                Dona is a certified consultant in the Kolbe A™ and related Indexes, PRINT®, Lectica® and CliftonStrengths® assessments and a Certified Talent Management Consultant and a Registered Professional Recruiter.
+              </p>
             </div>
             <div class="card-wrapper grey-card-bg">
               <div class="grey-card-body">
@@ -76,9 +78,13 @@ const About = () => {
               </div>
               <h3>Lisa Zeppetzauer <span>Founding Partner</span></h3>
               <p>
-                Lisa is one of the company’s management consultants, President, and head of sales. She holds an International Business degree and worked for Swiss and Austrian companies in contract and business development.
+                Lisa is our President and one of RHEALIZE’s management consultants.
               </p>
-              <p>Lisa is a certified consultant in the Kolbe A™ and related Indexes and PRINT® assessments.</p>
+              <p>
+                She holds an International Business degree and worked for Swiss and Austrian companies in contract and business development.</p>
+              <p>
+              Lisa is a certified consultant in the Kolbe A™ and related Indexes and PRINT® assessments.
+              </p>
             </div>
             <div class="card-wrapper grey-card-bg">
               <div class="grey-card-body">
@@ -88,7 +94,10 @@ const About = () => {
               </div>
               <h3>Jeff Polovick <span>Founding Partner</span></h3>
               <p>
-                Jeff is one of the company’s management consultants. He has more than 45 year’s experience running his own businesses and being a board member for other organizations and companies. He is also an author, having written thebook “Why Can’t We?” abouthis experiences building amulti-million-dollar national automotive company. 
+                Jeff is one of RHEALIZE's management consultants. He has more than 45 year's experience running his own businesses and being a board member for other organizations and companies.
+              </p>
+              <p>
+                He is also an author, having written thebook “Why Can't We?” abouthis experiences building amulti-million-dollar national automotive company.
               </p>
               <p>Jeff is a certified consultant in the Kolbe A™ and related Indexes and PRINT® assessments.</p>
             </div>
