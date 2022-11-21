@@ -27,6 +27,9 @@ const Header = () => {
               className="nav-wrapper"
             >
               <Nav.Item>
+                <Link to="/">Home</Link>
+              </Nav.Item>
+              <Nav.Item>
                 <Link to="/About">About</Link>
               </Nav.Item>
               <Nav.Item>
