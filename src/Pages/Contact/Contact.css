@@ -294,3 +294,8 @@
         padding: 20px 40px;
     }
 }
+@media screen and (max-width: 991px) {
+    .contact-submit .btn {
+        padding: 15px 10px;
+    }
+}

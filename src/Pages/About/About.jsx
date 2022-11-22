@@ -37,7 +37,7 @@ const About = () => {
                       <p>Align Candidates with roles where they are most likely to succeed given their current interests, abilities and circumstances</p>
                     </div>
                   </div>
-                  <center><Link to="/" className="btn button-dark mt-5 width-100">Contact us to<br></br> Learn About Our<br></br> Process</Link></center>
+                  <center><Link to="/Employer" className="btn button-dark mt-5 width-100">Contact us to<br></br> Learn About Our<br></br> Process</Link></center>
                 </div>
                 <div className='about-left-bottom'>
                   <p>Copyright Notices:</p>

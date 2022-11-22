@@ -99,8 +99,9 @@
 	letter-spacing: 0.05em;
 	color: #13184D;
 	gap: 15px;
-	align-items: flex-end;
+	align-items: center;
 	justify-content: space-between;
+	flex-wrap: wrap;
 }
 .blog-user-name{
 	font-family: var(--font-primary);
@@ -124,6 +125,13 @@
 	letter-spacing: 0.02em;
 	color: #000000;
 	font-family: var(--font-primary);
+}
+.blog-text  .button-dark:focus, .blog-text  .button-dark:active{
+	background-color: var(--bgprimary-teal);
+	border-color: var(--bgprimary-teal);
+}
+.blog-text  .button-dark:hover{
+	border-color: var(--bgprimary-teal);
 }
 /* Responsive */
 @media screen and (max-width: 991px) {

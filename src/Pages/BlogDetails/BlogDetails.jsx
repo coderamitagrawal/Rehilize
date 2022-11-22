@@ -5,6 +5,8 @@ import blogImage from "../../Assets/img/blogImage.jpg";
 import shareIcon from "../../Assets/img/share-icon.png";
 import linkedInLogo from "../../Assets/img/linkedIn-logo.png";
 import linkIcon from "../../Assets/img/link-icon.png";
+import backTo from "../../Assets/img/back-to-icon.png";
+
 import { Link } from "react-router-dom";
 const BlogDetails = () => {
   return (
@@ -38,7 +40,7 @@ const BlogDetails = () => {
               </div>
               <div className="blog-user">
                 <div className="blogging-date">Published 25 October 2022</div>
-                <Link className="blog-user-name text-right">
+                <Link to="/About" className="blog-user-name text-right">
                   By Dona Baker,
                   <div className="font-normal">RHEALIZE, Co-founder and <br></br>Head of People Development</div>
                 </Link>
@@ -70,11 +72,16 @@ const BlogDetails = () => {
         <div className="row">
           <div className="col-sm-12 mt-5 mb-5">
             <div className='blog-links'>
-              <center><Link to="/blogDetails" className="btn button-prev"> Previous Post </Link></center>
+              <center><Link to="/blogDetails" className="btn button-prev">{"<<"} Previous Post </Link></center>
               <center><Link to="/blogDetails" className="btn button-backto">Back to Blog Page</Link></center>
-              <center><Link to="/blogDetails" className="btn button-prev">Next Post</Link></center>
+              <center><Link to="/blogDetails" className="btn button-prev">Next Post {">>"} </Link></center>
             </div>
           </div>
+        </div>
+      </div>
+      <div className='back-to-link'>
+        <div className='back-to-icon'>
+          <Link><img src={backTo} alt="blog" width="100%" /> </Link>
         </div>
       </div>
     </div>

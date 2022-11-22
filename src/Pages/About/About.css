@@ -383,5 +383,8 @@
 		margin-top: 0;
 		margin-bottom: 35px;
 	}
+	.team-info-right, .team-info-left p, .about-left {
+		padding: 20px;
+	}
 }
 

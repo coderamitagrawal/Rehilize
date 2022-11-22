@@ -124,6 +124,11 @@
 	color: var(--secondry-color);
 	border: 6px solid var(--border-color-focus);
 }
+.button-light:active {
+	background-color: var(--lightblue-color-focus) !important;
+	color: var(--secondry-color) !important;
+	border: 6px solid var(--border-color-focus) !important;
+}
 .button-dark {
 	background-color: var(--primary-color);
 	color: var(--secondry-color);
@@ -149,7 +154,11 @@
 	color: var(--secondry-color);
 	border: 6px solid var(--lightblue-color);
 }
-
+.button-dark:active {
+	background-color: var(--lightblue-color) !important;
+	color: var(--secondry-color) !important;
+	border: 6px solid var(--lightblue-color) !important;
+}
 
 
 .button-prev {
@@ -173,10 +182,10 @@
 	color: var(--primary-color);
 	border: 6px solid var(--bgprimary-teal);
 }
-.button-prev:focus {
-	background-color: var(--bgprimary-teal);
-	color: var(--secondry-color);
-	border: 6px solid var(--bgprimary-teal);
+.button-prev:focus, .button-prev:active {
+	background-color: var(--bgprimary-teal) !important;
+	color: var(--secondry-color) !important;
+	border: 6px solid var(--bgprimary-teal) !important;
 }
 .button-backto {
 	background-color: var(--primary-color);
@@ -199,10 +208,10 @@
 	color: var(--secondry-color);
 	border: 6px solid var(--bgprimary-teal);
 }
-.button-backto:focus {
-	background-color: var(--bgprimary-teal);
-	color: var(--secondry-color);
-	border: 6px solid var(--bgprimary-teal);
+.button-backto:focus, .button-backto:active {
+	background-color: var(--bgprimary-teal) !important;
+	color: var(--secondry-color) !important;
+	border: 6px solid var(--bgprimary-teal) !important;
 }
 
 
@@ -279,7 +288,7 @@
 	width: 100%;
 }
 .nav-wrapper .nav-item{
-	padding: 8px 0;
+	padding: 0;
     font-weight: 500;
 }
 .nav-wrapper .nav-item:last-child {
@@ -289,18 +298,22 @@
 	text-decoration: none;
     text-transform: uppercase;
     font-size: 20px;
-	padding: 0 10px;
+	padding: 8px 10px;
 	font-weight: 600;
     line-height: normal;
     text-align: center;
     letter-spacing: 0.02em;
     color: var(--color-black);
 	border-right: 2px solid var(--color-black);
+	display: block;
 }
-.nav-wrapper .nav-item:hover{
+.nav-wrapper .nav-item:last-child a{
+	border: none;
+}
+.nav-wrapper .nav-item a:hover{
 	background-color: #9999BC;
 }
-.nav-wrapper .nav-item.active-nav{
+.nav-wrapper .nav-item a.activeLink{
 	background-color: #9999BC;
 }
 .footer-wrapper {
@@ -333,7 +346,7 @@ footer {
 
 .footer-nav .list-group .list-group-item a {
 	text-decoration: none;
-	color: var(--color-white);
+	color: var(--color-black);
 	font-style: normal;
 	font-weight: 700;
 	font-size: 15px;
@@ -415,6 +428,14 @@ footer {
 }
 .custom-modal-ui .btn-close:focus {
 	box-shadow: none;
+}
+.back-to-link{
+	position: relative;
+}
+.back-to-icon{
+	position: fixed;
+	left: 35px;
+	bottom: 160px;
 }
 
 @media (max-width: 992px) {
