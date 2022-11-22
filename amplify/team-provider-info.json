@@ -1,0 +1,30 @@
+{
+  "develop": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-websitepublic-develop-230959-authRole",
+      "UnauthRoleArn": "arn:aws:iam::324455135251:role/amplify-websitepublic-develop-230959-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::324455135251:role/amplify-websitepublic-develop-230959-authRole",
+      "Region": "ca-central-1",
+      "DeploymentBucketName": "amplify-websitepublic-develop-230959-deployment",
+      "UnauthRoleName": "amplify-websitepublic-develop-230959-unauthRole",
+      "StackName": "amplify-websitepublic-develop-230959",
+      "StackId": "arn:aws:cloudformation:ca-central-1:324455135251:stack/amplify-websitepublic-develop-230959/20189270-6796-11ed-b05c-0676417b4f14",
+      "AmplifyAppId": "dr8ye020uhah2"
+    },
+    "categories": {
+      "function": {
+        "contactInfoLlambda": {
+          "deploymentBucketName": "amplify-websitepublic-develop-230959-deployment",
+          "s3Key": "amplify-builds/contactInfoLlambda-477234444c3869784863-build.zip",
+          "sesEmail": "hiteshgurjar786@gmail.com"
+        }
+      },
+      "storage": {
+        "contactInfoDb": {}
+      },
+      "api": {
+        "contactInfo": {}
+      }
+    }
+  }
+}

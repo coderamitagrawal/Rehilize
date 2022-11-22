@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className="footer-wrapper">
     <div className="footer-nav">
     <ListGroup>
-      <ListGroup.Item><Link to="/">Privacy Policy</Link></ListGroup.Item>
+      <ListGroup.Item><Link to="/privacy">Privacy Policy</Link></ListGroup.Item>
       <ListGroup.Item><Link to="/">Terms of Use</Link></ListGroup.Item>
       <ListGroup.Item><Link to="/">Accessibility</Link></ListGroup.Item>
     </ListGroup>

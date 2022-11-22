@@ -1,12 +1,18 @@
 :root {
 	--primary-color: #BEA600;
 	--secondry-color: #13184D;
+	--lightblue-color: #9999BC;
+	--lightblue-color-focus: #B8AF81;
+	--border-color-hover: #BEA600;
+	--border-color-focus: #B8AF81;
 	--color-black: #000000;
+	--color-white: #ffffff;
 	--color-black-1: rgba(0, 0, 0, 0.1);
 	--color-black-7: rgba(0, 0, 0, 0.75);
 	--font-primary: 'Montserrat', sans-serif;
 	--font-secondry: 'Libre Baskerville';
 	--bgprimary-light: #BEA600;
+	--bgprimary-teal: #6AD8D8;
 	--bg-white: #ffffff;
 	--bg-white-light-1: #F5F5F5;
 	--bg-white-light-2: #E5E5E5;
@@ -15,6 +21,7 @@
 	--bg-gray-light: #B2B2B2;
 	--green-light: #87AF81;
 	--title-big: #6AD8D8;
+	--dark-geern-bg: #87AF81;
 }
 
 body {

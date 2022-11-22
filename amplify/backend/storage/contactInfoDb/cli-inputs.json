@@ -1,0 +1,10 @@
+{
+  "resourceName": "contactInfoDb",
+  "tableName": "contact",
+  "partitionKey": {
+    "fieldName": "email",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}

@@ -1,12 +1,14 @@
 import React from "react";
-import { Navbar,Nav } from "react-bootstrap";
-import { Link, NavLink } from "react-router-dom";
+import { Navbar, Nav } from "react-bootstrap";
+import { Link, useLocation } from "react-router-dom";
 import navBgImage from "../../Assets/img/nav-bg.png";
 import rhealizeLogo from "../../Assets/img/rhealize-logo.png";
-import {BiMenu} from "react-icons/bi"
+import { BiMenu } from "react-icons/bi"
 import "./layoutStyle.css";
 
 const Header = () => {
+  const { pathname } = useLocation()
+  console.log(123, pathname)
   return (
     <div>
       <div className="header-logo text-center">
@@ -19,7 +21,7 @@ const Header = () => {
           <img src={navBgImage} alt="img" className="img-fluid" />
         </div>
         <Navbar expand="lg">
-          <Navbar.Toggle ><BiMenu aria-controls="basic-navbar-nav" className="menuIcon"/></Navbar.Toggle>
+          <Navbar.Toggle ><BiMenu aria-controls="basic-navbar-nav" className="menuIcon" /></Navbar.Toggle>
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav
               activeKey="/home"
@@ -27,19 +29,22 @@ const Header = () => {
               className="nav-wrapper"
             >
               <Nav.Item>
-                <Link to="/About">About</Link>
+                <Link to="/" className={`${pathname === '/' ? "activeLink" : ''}`}>Home</Link>
               </Nav.Item>
               <Nav.Item>
-                <Link to="/Candidate">Candidate</Link>
+                <Link to="/About" className={`${pathname === '/About' ? "activeLink" : ''}`} >About</Link>
               </Nav.Item>
               <Nav.Item>
-                <Link to="/Employer">Employer</Link>
+                <Link to="/Candidate"  className={`${pathname === '/Candidate' ? "activeLink" : ''}`}>Candidate</Link>
               </Nav.Item>
               <Nav.Item>
-                <Link to="/Blog">Blog</Link>
+                <Link to="/Employer"  className={`${pathname === '/Employer' ? "activeLink" : ''}`}>Employer</Link>
               </Nav.Item>
               <Nav.Item>
-                <Link to="/Contact">Contact</Link>
+                <Link to="/Blog"  className={`${pathname === '/Blog' ? "activeLink" : ''}`}>Blog</Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Link to="/Contact"  className={`${pathname === '/Contact' ? "activeLink" : ''}`}>Contact</Link>
               </Nav.Item>
             </Nav>
           </Navbar.Collapse>

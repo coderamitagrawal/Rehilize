@@ -1,0 +1,60 @@
+.privacy-wrapper{
+    padding: 50px 0;
+}
+.effective-date{
+    font-family: var(--font-primary);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 25px;
+    letter-spacing: 0.02em;
+    color: #000000;
+}
+.privacy-wrapper h1{
+    font-family: var(--font-secondry);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 25px;
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+}
+
+.privacy-wrapper h3{
+    font-family: var(--font-secondry);
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 25px;
+    color: #000000;
+    text-transform: capitalize;
+    letter-spacing: 0.05em;
+    margin-bottom: 30px;
+}
+
+.privacy-wrapper p{
+    font-family: var(--font-primary);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 25px;
+    letter-spacing: 0.05em;
+    margin-bottom: 30px;
+}
+.privacy-wrapper ul{
+    font-family: var(--font-primary);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 25px;
+    letter-spacing: 0.05em;
+    margin-bottom: 30px;
+    word-break: break-word;
+}
+.privacy-wrapper a{
+    color: #13184D;
+    font-weight: 600;
+}
+.mailto{
+    text-decoration: none;
+}
