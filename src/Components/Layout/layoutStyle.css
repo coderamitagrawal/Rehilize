@@ -279,10 +279,10 @@
 .navbar  .navbar-collapse{
 	width: 100%;
 }
-.header-nav nav {
-	/* background-color: var(--bg-yellow); */
-	/* padding: 8px 0; */
-}
+/* .header-nav nav {
+	background-color: var(--bg-yellow);
+	padding: 8px 0;
+} */
 .header-nav .nav-wrapper{
 	justify-content: center;
 	width: 100%;
@@ -404,6 +404,7 @@ footer {
 	margin: 0;
 	min-height: 30px;
 	object-fit: cover;
+	width: 100%;
 }
 .custom-modal-ui .modal-dialog {
 	max-width: 80%;

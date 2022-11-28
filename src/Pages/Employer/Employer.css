@@ -111,3 +111,12 @@
     border-width: 2px;
     min-width: 45px;
   }
+  .successMsg{
+    color:green;
+    text-align: center;
+}
+
+.errorMsg{
+    color: red;
+    text-align: center;
+}

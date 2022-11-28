@@ -8,7 +8,7 @@ import "./layoutStyle.css";
 
 const Header = () => {
   const { pathname } = useLocation()
-  console.log(123, pathname)
+
   return (
     <div>
       <div className="header-logo text-center">

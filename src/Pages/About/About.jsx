@@ -8,7 +8,7 @@ import { Col,Row, } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 const About = () => {
   return (
-    <div class="main-wrapper m-0">
+    <div className="main-wrapper m-0">
       <section className='about-main-wrapper'>
         <Row className='m-0'>
           <Col md={4} className='p-0'>
@@ -45,7 +45,7 @@ const About = () => {
                   All rights reserved.</p>
                   <p>PRINT® survey – provided by The Paul Hertz Group – Copyright © Paul Hertz Group. All right reserved.</p>
                   <p>CliftonStrengths® survey – provided Gallup, Inc. − Copyright © Gallup, Inc. All rights reserved.</p>
-                  <p>Lectica® and LectaTes>ts™ − provided by Lectica, Inc. Copyright © Lectica, Inc. All rights reserved.</p>
+                  <p>Lectica® and LectaTests™ − provided by Lectica, Inc. Copyright © Lectica, Inc. All rights reserved.</p>
                 </div>
             </div>
           </Col>

@@ -1,0 +1,1 @@
+export const BaseUrl = "https://mza174k33b.execute-api.ca-central-1.amazonaws.com/develop/"
