@@ -120,3 +120,13 @@
     color: red;
     text-align: center;
 }
+.form-right-title{
+  font-family: var(--font-secondry);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 35px;
+  text-align: center;
+  letter-spacing: 0.08em;
+  color: #13184D;
+}

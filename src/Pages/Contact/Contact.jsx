@@ -6,6 +6,7 @@ import * as Yup from "yup";
 import InfoSubmit from "../ModalPopUp/InfoSubmit";
 import axios from "axios";
 import { BaseUrl } from "../../utils/Config.js";
+import { useEffect } from "react";
 
 const validationSchema = Yup.object().shape({
   firstName: Yup.string().required("First Name is Required*"),
@@ -28,11 +29,14 @@ export const Contact = () => {
         setResponse({ success: response.data.success });
          setShow(true) 
       },
+      
       (error) => {
         setResponse({ error: error.message });
       }
     );
   };
+
+
 
   return (
     <div className="inner-page-wrapper">
@@ -62,15 +66,16 @@ export const Contact = () => {
                     email: "",
                     helpType: "select option",
                     helpDescription: "",
-                    signMe: false,
+                    signmeUp: false,
                     // news: false,
                     // Special_announcements: false,
                     // services: false,
-                    formType:"Contact"
+                    //formType:"Contact"
                   }}
                   validationSchema={validationSchema}
-                  onSubmit={(values) => {
-                    postContact(values);
+                  onSubmit={(values,{resetForm}) => {
+                  postContact(values);
+                  resetForm({values:""})
                   }}
                 >
                   {({ errors, touched, values }) => (
@@ -206,7 +211,8 @@ export const Contact = () => {
                                     className="form-check-input"
                                     type="checkbox"
                                     id="accept"
-                                    name="signMe"
+                                    name="signmeUp"
+                                    checked={values.signmeUp}
                                   />
                                 </div>
                               </div>

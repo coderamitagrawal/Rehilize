@@ -47,6 +47,9 @@
     font-weight: 600;
     font-size: 12px;
 }
+.share-btn .dropdown-menu .dropdown-item button {
+    min-width: auto;
+}
 .share-btn .dropdown-menu  .dropdown-item img{
     width: 20px;
     margin-right: 5px;
@@ -56,6 +59,7 @@
     align-items: center;
     justify-content: center;
     gap: 15px;
+    flex-wrap: wrap;
 }
 .blog-content p.small{
     font-size: 16px;
@@ -80,5 +84,10 @@
 @media screen and (max-width: 767px) {
     .blog-detail-heading {
         max-width: 100%;
+    }
+}
+@media screen and (max-width: 640px) {
+    .blog-details-top{
+        flex-wrap: wrap;
     }
 }

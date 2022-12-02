@@ -3,7 +3,7 @@ import "./Candidate.css";
 import { Col, Row, Button, Form } from "react-bootstrap";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import { BaseUrl } from "../../utils/Config";
+import { candBaseUrl } from "../../utils/Config";
 import axios from "axios";
 import InfoSubmit from "../ModalPopUp/InfoSubmit";
 
@@ -23,9 +23,9 @@ const Candidate = () => {
 
   const postCandidate = (values) => {
     
-    axios.post(`${BaseUrl}addContact`, values).then(
-      
+    axios.post(candBaseUrl, values).then(
       (response) => {
+   
         setResponse({ success: response.data.success });
         setShow(true);
       },
@@ -87,16 +87,17 @@ const Candidate = () => {
                   firstName: "",
                   lastName: "",
                   email: "",
-                  helpType: "",
-                  signMe: false,
+                  helpDescription: "",
+                  signupMe: false,
                   // subscribeNewsLetter: false,
                   // subscribeSpecialAnnouncements: false,
                   // subscribeServces: false,
                   formType:"Candidate"
                 }}
                 validationSchema={validationSchema}
-                onSubmit={(values) => {
+                onSubmit={(values,{resetForm}) => {
                   postCandidate(values);
+                  resetForm({values:""})
                 }}
               >
                 {({ handleSubmit, handleChange, errors, touched, values }) => (
@@ -172,7 +173,7 @@ const Candidate = () => {
                         >
                           <Form.Label>HOW CAN WE HELP? - Optional</Form.Label>
                           <Form.Control
-                            name="helpType"
+                            name="helpDescription"
                             value={values.help}
                             onChange={handleChange}
                             as="textarea"
@@ -197,9 +198,9 @@ const Candidate = () => {
                             <input
                               className="form-check-input"
                               type="checkbox"
-                              value=""
+                             checked={values.signupMe}
                               onChange={handleChange}
-                              id="signMe"
+                              id="signupMe"
                             />
                           </div>
                         </Form.Group>

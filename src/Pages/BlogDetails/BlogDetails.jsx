@@ -6,10 +6,12 @@ import shareIcon from "../../Assets/img/share-icon.png";
 import linkedInLogo from "../../Assets/img/linkedIn-logo.png";
 import linkIcon from "../../Assets/img/link-icon.png";
 import backTo from "../../Assets/img/back-to-icon.png";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import {CopyToClipboard} from 'react-copy-to-clipboard';
 
 const BlogDetails = () => {
   const [visible, setVisible] = useState(false);
+  const location = useLocation()
 
   const toggleVisible = () => {
     const scrolled = document.documentElement.scrollTop;
@@ -29,14 +31,21 @@ const BlogDetails = () => {
 
   window.addEventListener("scroll", toggleVisible);
 
-  useEffect(()=>{
-    const divHeight = document.getElementById('small-below').offsetTop;
-    window.scrollTo({
-      top:divHeight
-    })
-  },[])
-
-
+  useEffect(() => {
+    if(location.pathname == "/blogDetails"){
+      const divHeight = document.getElementById("small-below").offsetTop;
+      window.scrollTo({
+        top: divHeight,
+      });
+    }
+    else{
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+    
+  }, []);
 
   return (
     <div className="main-wrapper blog-wrapper">
@@ -61,13 +70,18 @@ const BlogDetails = () => {
                       <img src={shareIcon} alt="blog" width="100%" />
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
-                      <Dropdown.Item href="#">
+                    <Dropdown.Item
+                        href={`https://linkedin.com/shareArticle?url=share.com/&blog_title=Do_you_want_to_be_a_Tree_Planter?`}
+                        target="_blank"
+                      >
+                        <img src={linkIcon} alt="blog" width="100%" />
                         <img src={linkedInLogo} alt="blog" width="100%" />
-                        Share
                       </Dropdown.Item>
                       <Dropdown.Item href="#">
                         <img src={linkIcon} alt="blog" width="100%" />
-                        Get Link
+                      <CopyToClipboard text={"google.com"}>
+                      <span> Get Link</span> 
+                      </CopyToClipboard>
                       </Dropdown.Item>
                     </Dropdown.Menu>
                   </Dropdown>
@@ -181,7 +195,7 @@ const BlogDetails = () => {
            */}
               <center>
                 <Link to="/blogDetails/3" className="btn button-prev">
-                {"<<"}{" "}  Previous Post 
+                  {"<<"} Previous Post
                 </Link>
               </center>
               <center>

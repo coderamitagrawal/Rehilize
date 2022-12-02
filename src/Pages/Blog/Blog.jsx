@@ -5,6 +5,7 @@ import turnoverThrows from "../../Assets/img/turnover-throws-img.png";
 import psychological from "../../Assets/img/psychological-img.png";
 import talentLuck from "../../Assets/img/talent-or-luck-img.png";
 import { Link } from "react-router-dom";
+
 export const Blog = () => {
   return (
     <>
@@ -31,7 +32,7 @@ export const Blog = () => {
                 In Part I of this two-part series, I wrote that we really need to be clear when explaining the roles in our organization. Most importantly by describing the main focus of the job and what a person needs to have for knowledge, skills, abilities and other attributes (KSAOs) to do their role successfully.
                 </p>
                 <div className="text-right">
-                 <Link to="/blogDetails" className="btn continue-btn pt-0 pb-0">Continue Reading</Link>
+                 <Link to="/blogDetails" className="btn continue-btn pt-1 pb-1">Continue Reading</Link>
                 </div>
               </div>
             </div>
@@ -56,7 +57,7 @@ export const Blog = () => {
                           Have you ever used a turnover calculator to figure out the real cost of
                           someone leaving your organization? It’s staggering. No matter why an employee exits.
                         </p>
-                        <center><Link to="/blogDetails" className="btn button-dark mt-5 w-100">Continue Reading</Link></center>
+                        <center><Link to="/blogDetails/part3" className="btn button-dark mt-5 w-100">Continue Reading</Link></center>
                       </div>
                     </div>
                   </div>
@@ -73,7 +74,7 @@ export const Blog = () => {
                           In her video <strong><a href="https://vimeo.com/609694802" target="blank">Psychological Safety is No Accident,</a></strong> Dr. Eve Purdy advises that senior leaders in organizations often
                           assume their employees feel psychologically safe because they happen to feel safe.
                         </p>
-                        <center><Link to="/blogDetails" className="btn button-dark mt-5 w-100">Continue Reading</Link></center>
+                        <center><Link to="/blogDetails/part2" className="btn button-dark mt-5 w-100">Continue Reading</Link></center>
                       </div>
                     </div>
                   </div>
@@ -90,7 +91,7 @@ export const Blog = () => {
                           Have you ever used a turnover calculator to figure out the real cost of
                           someone leaving your organization? It’s staggering. No matter why an employee exits.
                         </p>
-                        <center><Link to="/blogDetails" className="btn button-dark mt-5 w-100">Continue Reading</Link></center>
+                        <center><Link to="/blogDetails/part1" className="btn button-dark mt-5 w-100">Continue Reading</Link></center>
                       </div>
                     </div>
                   </div>

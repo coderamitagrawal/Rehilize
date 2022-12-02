@@ -18,13 +18,13 @@ const PublicRoutes = () => {
   const location = useLocation()
 
   useEffect(()=>{
-    if (location.pathname == "/blogDetails/1"){
+    if (location.pathname == "/blogDetails/1" || location.pathname == "/blogDetails/part1"){
       setPath(1)
     }
-    if (location.pathname == "/blogDetails/2"){
+    if (location.pathname == "/blogDetails/2" || location.pathname == "/blogDetails/part2"){
       setPath(2)
     }
-    if (location.pathname == "/blogDetails/3"){
+    if (location.pathname == "/blogDetails/3" || location.pathname == "/blogDetails/part3"){
       setPath(3)
     }
     if (location.pathname == "/blogDetails/4"){

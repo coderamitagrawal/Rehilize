@@ -511,6 +511,10 @@ footer {
 	.inner-left p{
 		margin-left: 0;
 	}
+	.button-prev, .button-backto{
+		font-size: 18px;
+		line-height: 20px;
+	}
 }
 @media screen and (max-width: 767px) {
 	.card-row-wrapper {
@@ -535,6 +539,7 @@ footer {
 		font-size: 20px;
 		line-height: 20px;
 	}
+	
 }
 
 @media (max-width: 640px) {
@@ -604,7 +609,45 @@ footer {
 	.btn br{
 		display: none;
 	}
-	
+	.about-right-top ul{
+		margin: 0;
+	}
+	.blog-wrapper .dark-grey-card-bg{
+		padding: 1rem;
+	}
+	.custom-modal-ui .modal-dialog {
+		max-width: 96%;
+		margin: 0 auto;
+	}
+	.inner-left, .inner-right{
+		min-height: inherit;
+	}
+	.blog-header h1{
+		font-size: 28px;
+		line-height: 36px;
+		margin-top: 20px;
+	}
+	.blog-user-name.text-right{
+		text-align: left;
+	}
+	.blog-content {
+		font-weight: 400;
+		font-size: 16px;
+	}
+	.back-to-icon {
+		left: 8px;
+		bottom: 15px;
+	}
+	.back-to-icon a img{
+		width: 20px;
+	}
+	.button-prev, .button-backto {
+		font-size: 14px;
+		line-height: 16px;
+		min-width: inherit;
+		letter-spacing: inherit;
+		padding: 5px;
+	}
 }
 
 /* header end */

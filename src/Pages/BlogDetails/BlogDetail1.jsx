@@ -6,12 +6,12 @@ import shareIcon from "../../Assets/img/share-icon.png";
 import linkedInLogo from "../../Assets/img/linkedIn-logo.png";
 import linkIcon from "../../Assets/img/link-icon.png";
 import backTo from "../../Assets/img/back-to-icon.png";
-import { Link } from "react-router-dom";
-
+import { Link, useLocation } from "react-router-dom";
+import {CopyToClipboard} from 'react-copy-to-clipboard';
 
 const BlogDetail1 = () => {
   const [visible, setVisible] = useState(false);
-
+  const location  = useLocation()
   const toggleVisible = () => {
     const scrolled = document.documentElement.scrollTop;
     if (scrolled > 50) {
@@ -30,12 +30,34 @@ const BlogDetail1 = () => {
 
   window.addEventListener("scroll", toggleVisible);
 
+
   useEffect(()=>{
-    const divHeight = document.getElementById('small-below').offsetTop;
-    window.scrollTo({
-      top:divHeight
-    })
+    if (location.pathname == "/blogDetails/part1"){
+      const divHeight = document.getElementById('small-below').offsetTop;
+     window.scrollTo({
+       top:divHeight
+     })
+    }
+    else{
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+   
   },[])
+
+  
+  
+{/*
+   useEffect(()=>{
+     const divHeight = document.getElementById('main-wrapper blog-wrapper').offsetTop;
+     window.scrollTo({
+       top:divHeight
+     })
+   },[]) 
+*/}
+  
   return (
     <div className="main-wrapper blog-wrapper">
     <div className="container">
@@ -58,13 +80,18 @@ const BlogDetail1 = () => {
                     <img src={shareIcon} alt="blog" width="100%" />
                   </Dropdown.Toggle>
                   <Dropdown.Menu>
-                    <Dropdown.Item href="#">
-                      <img src={linkedInLogo} alt="blog" width="100%" />
-                      Share
-                    </Dropdown.Item>
+                  <Dropdown.Item
+                        href={`https://linkedin.com/shareArticle?url=share.com/&blog_title=Talent_or_Luck?_What_Matters_Most?`}
+                        target="_blank"
+                      >
+                        <img src={linkIcon} alt="blog" width="100%" />
+                        <img src={linkedInLogo} alt="blog" width="100%" />
+                      </Dropdown.Item>
                     <Dropdown.Item href="#">
                       <img src={linkIcon} alt="blog" width="100%" />
-                      Get Link
+                      <CopyToClipboard text={"google.com"}>
+                      <span> Get Link</span> 
+                      </CopyToClipboard>
                     </Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>

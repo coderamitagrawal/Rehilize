@@ -5,9 +5,11 @@ import employeeImg from "../../Assets/img/employers-img.png";
 import { Link } from "react-router-dom";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import { BaseUrl } from "../../utils/Config.js";
+import { empBaseUrl } from "../../utils/Config.js";
 import axios from "axios";
 import InfoSubmit from "../ModalPopUp/InfoSubmit";
+import { jsPDF } from "jspdf";
+
 
 const validationSchema = Yup.object().shape({
   firstName: Yup.string().required("First Name is Required*"),
@@ -26,7 +28,7 @@ const Employer = () => {
 
   const postEmployer = (values) => {
     
-    axios.post(`${BaseUrl}addContact`, values).then(
+    axios.post(empBaseUrl, values).then(
       (response) => {
         setResponse({ success: response.data.success });
         setShow(true);
@@ -37,6 +39,13 @@ const Employer = () => {
     );
   };
 
+
+  const generatePdf = () =>{
+    const doc = new jsPDF();
+    doc.text("Download Pdf RHEALIZE", 10, 10);
+    doc.save("Rhealize.pdf");
+  }
+
   return (
     <div className="main-wrapper mt-0">
       {InfoSubmit && <InfoSubmit show={show} onHide={handleClose} />}
@@ -45,7 +54,7 @@ const Employer = () => {
           <Col md={6} className="p-0">
             <div className="inner-left">
               <h1>At RHEALIZE we believe that people are perfect … </h1>
-              <h1 className="text-right mb-5">for something.</h1>
+              <h1 className="text-right mb-5"><i>for something.</i></h1>
               <p className="mb-4">
                 We spend time with candidates getting to know what that
                 “something” is. And the circumstances in which each candidate
@@ -69,9 +78,10 @@ const Employer = () => {
                 management activities that are known to drive the highest
                 employee engagement and retention.
               </p>
+              <p><strong>Assess your organization's readiness for engaging productive people. Download RHEALIZE's free Human Relations Scorecard by clicking below.</strong></p>
               <center>
-                <Link to="" className="btn button-dark mb-4 mt-5">
-                  Schedule a Free<br></br> Consultation
+                <Link onClick={generatePdf} className="btn button-light mb-4 mt-5">
+                  Download  Our Free<br></br> Human Relations Scorecard
                 </Link>
               </center>
               <div className="mt-5">
@@ -84,22 +94,25 @@ const Employer = () => {
               <h1 className="form-heading-green mb-4 w-100 mt-5 mb-5">
                 I’m ready to RHEALIZE the potential
               </h1>
+              <center><h2 className="mb-5 form-right-title">Schedule a Free Consultation</h2></center>
               <Formik
                 initialValues={{
                   firstName: "",
                   lastName: "",
                   email: "",
-                  occupation: "",
+                  jobTitle: "",
+                  organization:"",
                   helpDescription: "",
-                  signMe: false,
+                  signupMe: false,
                   // subscribeNewsLetter: false,
                   // subscribeSpecialAnnouncements: false,
                   // subscribeServces: false,
                   formType:"Employer"
                 }}
                 validationSchema={validationSchema}
-                onSubmit={(values) => {
+                onSubmit={(values,{resetForm}) => {
                   postEmployer(values);
+                  resetForm({values:""})
                 }}
               >
                 {({ handleSubmit, handleChange, errors, touched, values }) => (
@@ -174,18 +187,37 @@ const Employer = () => {
                           controlId="formBasicPassword"
                         >
                           <Form.Label>
-                            OCCUPATION - Optional<sup>*</sup>
+                            JOB TITLE - Optional
                           </Form.Label>
                           <Form.Control
                             type="text"
                             placeholder=""
-                            name="occupation"
-                            value={values.occupation}
+                            name="jobTitle"
+                            value={values.jobTitle}
                             onChange={handleChange}
                           />
                         </Form.Group>
                       </Col>
                     </Row>
+                    <Row>
+                    <Col md={12}>
+                      <Form.Group
+                        className="mb-5"
+                        controlId="formBasicPassword"
+                      >
+                        <Form.Label>
+                          ORGANIZATION - Optional
+                        </Form.Label>
+                        <Form.Control
+                          type="text"
+                          placeholder=""
+                          name="organization"
+                          value={values.organization}
+                          onChange={handleChange}
+                        />
+                      </Form.Group>
+                    </Col>
+                  </Row>
                     <Row>
                       <Col md={12}>
                         <Form.Group
@@ -195,7 +227,7 @@ const Employer = () => {
                           <Form.Label>HOW CAN WE HELP? - Optional</Form.Label>
                           <Form.Control
                             name="helpDescription"
-                            value={values.help}
+                            value={values.helpDescription}
                             onChange={handleChange}
                             as="textarea"
                             rows={3}
@@ -217,11 +249,11 @@ const Employer = () => {
                               unsubscribe at any time.
                             </label>
                             <input
+                              id="signupMe"
                               className="form-check-input"
+                              checked = {values.signupMe}
                               type="checkbox"
-                              value=""
                               onChange={handleChange}
-                              id="signMe"
                             />
                           </div>
                         </Form.Group>
@@ -295,3 +327,4 @@ const Employer = () => {
 };
 
 export default Employer;
+
