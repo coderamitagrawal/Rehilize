@@ -1,7 +1,23 @@
 import React from 'react'
 import { Col, Row } from 'react-bootstrap';
+import { useLocation } from 'react-router-dom';
 import './Privacy.css'
+import { useEffect } from 'react';
+
+
 const Privacy = () => {
+const location = useLocation()
+
+  useEffect(()=>{
+    if(location.pathname == '/privacy'){
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+  },[])
+
+
   return (
     <div class="main-wrapper m-0">
       <div className='container'>

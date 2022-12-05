@@ -23,7 +23,7 @@ const Home = () => {
                   <p>
                     While you're ready for the challenge of a meaningful career, that work should also rise to your challenge - to meet you where your efforts have energy and purpose.
                   </p>
-                  <center><Link to="/Candidate" className="btn button-light mt-5">Find your fit</Link></center>
+                  <center><Link to="/candidate" className="btn button-light mt-5">Find your fit</Link></center>
                 </div>
               </div>
             </div>
@@ -38,7 +38,7 @@ const Home = () => {
                 <div className="grey-card-body">
                   <p>Hiring defines your organization’s future. So start by considering how your workplace best engages new talent.</p>
                   <p>What if rethinking roles attracted staff that redefined your business opportunities?</p>  
-                  <center><Link to="/Employer" className="btn button-dark mt-5">Get started</Link></center>
+                  <center><Link to="/employer" className="btn button-dark mt-5">Get started</Link></center>
                 </div>
               </div>
             </div>

@@ -4,9 +4,22 @@ import blogImage from "../../Assets/img/blogImage.jpg";
 import turnoverThrows from "../../Assets/img/turnover-throws-img.png";
 import psychological from "../../Assets/img/psychological-img.png";
 import talentLuck from "../../Assets/img/talent-or-luck-img.png";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 export const Blog = () => {
+
+  const location = useLocation()
+  
+  useEffect(()=>{
+    if(location.pathname == '/blog'){
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+  },[]) 
+
   return (
     <>
       <div className="main-wrapper blog-wrapper">

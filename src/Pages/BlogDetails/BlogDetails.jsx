@@ -32,6 +32,7 @@ const BlogDetails = () => {
   window.addEventListener("scroll", toggleVisible);
 
   useEffect(() => {
+
     if(location.pathname == "/blogDetails"){
       const divHeight = document.getElementById("small-below").offsetTop;
       window.scrollTo({
@@ -199,7 +200,7 @@ const BlogDetails = () => {
                 </Link>
               </center>
               <center>
-                <Link to="/Blog" className="btn button-backto">
+                <Link to="/blog" className="btn button-backto">
                   Back to Blog Page
                 </Link>
               </center>

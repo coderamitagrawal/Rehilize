@@ -44,7 +44,6 @@ const BlogDetail1 = () => {
         behavior: "smooth",
       });
     }
-   
   },[])
 
   
@@ -173,7 +172,7 @@ const BlogDetail1 = () => {
              </center> 
          */}
             <center>
-              <Link to="/Blog" className="btn button-backto">
+              <Link to="/blog" className="btn button-backto">
                 Back to Blog Page
               </Link>
             </center>

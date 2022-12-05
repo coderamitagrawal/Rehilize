@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import "./Employer.css";
 import { Col, Row, Button, Form } from "react-bootstrap";
 import employeeImg from "../../Assets/img/employers-img.png";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { empBaseUrl } from "../../utils/Config.js";
@@ -18,6 +18,9 @@ const validationSchema = Yup.object().shape({
 });
 
 const Employer = () => {
+
+  const location = useLocation()
+
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
 
@@ -26,8 +29,16 @@ const Employer = () => {
     error: "",
   });
 
+  useEffect(()=>{
+    if(location.pathname == '/employer'){
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+  },[])
+
   const postEmployer = (values) => {
-    
     axios.post(empBaseUrl, values).then(
       (response) => {
         setResponse({ success: response.data.success });

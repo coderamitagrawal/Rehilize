@@ -157,7 +157,7 @@ const BlogDetail2 = () => {
               </Link>
             </center>
             <center>
-              <Link to="/Blog" className="btn button-backto">
+              <Link to="/blog" className="btn button-backto">
                 Back to Blog Page
               </Link>
             </center>

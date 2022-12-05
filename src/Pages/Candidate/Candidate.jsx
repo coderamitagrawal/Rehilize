@@ -6,6 +6,8 @@ import * as Yup from "yup";
 import { candBaseUrl } from "../../utils/Config";
 import axios from "axios";
 import InfoSubmit from "../ModalPopUp/InfoSubmit";
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 const validationSchema = Yup.object().shape({
   firstName: Yup.string().required("First Name is Required*"),
@@ -14,6 +16,9 @@ const validationSchema = Yup.object().shape({
 });
 
 const Candidate = () => {
+
+  const location = useLocation()
+
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const [response, setResponse] = useState({
@@ -25,7 +30,6 @@ const Candidate = () => {
     
     axios.post(candBaseUrl, values).then(
       (response) => {
-   
         setResponse({ success: response.data.success });
         setShow(true);
       },
@@ -34,6 +38,15 @@ const Candidate = () => {
       }
     );
   };
+
+  useEffect(()=>{
+    if(location.pathname == '/candidate'){
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+  },[])
 
   return (
     <div className="main-wrapper mt-0">
@@ -174,7 +187,7 @@ const Candidate = () => {
                           <Form.Label>HOW CAN WE HELP? - Optional</Form.Label>
                           <Form.Control
                             name="helpDescription"
-                            value={values.help}
+                            value={values.helpDescription}
                             onChange={handleChange}
                             as="textarea"
                             rows={3}

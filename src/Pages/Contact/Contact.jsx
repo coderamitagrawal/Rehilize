@@ -5,7 +5,7 @@ import { Button, Col, Row } from "react-bootstrap";
 import * as Yup from "yup";
 import InfoSubmit from "../ModalPopUp/InfoSubmit";
 import axios from "axios";
-import { BaseUrl } from "../../utils/Config.js";
+import { contactBaseUrl } from "../../utils/Config.js";
 import { useEffect } from "react";
 
 const validationSchema = Yup.object().shape({
@@ -24,7 +24,7 @@ export const Contact = () => {
 
   const postContact = (values) => {
     
-    axios.post(`${BaseUrl}addContact`, values).then(
+    axios.post(contactBaseUrl, values).then(
       (response) => {
         setResponse({ success: response.data.success });
          setShow(true) 
@@ -303,4 +303,5 @@ export const Contact = () => {
     </div>
   );
 };
+
 

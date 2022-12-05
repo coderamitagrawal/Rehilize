@@ -8,7 +8,9 @@ import downArrow from "../../Assets/img/dropdown-arrow.png";
 import Dropdown from "react-bootstrap/Dropdown";
 import { Col,Row, } from 'react-bootstrap';
 import { Link } from "react-router-dom";
+
 const About = () => {
+
   return (
     <div className="main-wrapper m-0">
       <section className='about-main-wrapper'>
@@ -48,8 +50,8 @@ const About = () => {
                         
                         <Dropdown.Menu>
                           <div className='dropdown-arrow-icon'><img src={downArrow} alt="img" className="img-fluid" /></div>
-                          <Dropdown.Item href="/Candidate"><small>I am a</small> Candidate</Dropdown.Item>
-                          <Dropdown.Item href="/Employer"><small>I am a</small>Employer</Dropdown.Item>
+                          <Dropdown.Item href="/candidate"><small>I am a</small> Candidate</Dropdown.Item>
+                          <Dropdown.Item href="/employer"><small>I am a</small>Employer</Dropdown.Item>
                         </Dropdown.Menu>
                       </Dropdown>
                     </center>

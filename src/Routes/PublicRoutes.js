@@ -30,12 +30,14 @@ const PublicRoutes = () => {
     if (location.pathname == "/blogDetails/4"){
       setPath(4)
     }
-    if (location.pathname == "/blogDetails" || location.pathname == "/Blog" || location.pathname == "/About" || location.pathname == "/About" || location.pathname == "/Employer" || location.pathname == "/Candidate"){
+    if (location.pathname == "/blogDetails" || location.pathname == "/blog" || location.pathname == "/about" || location.pathname == "/about" || location.pathname == "/employer" || location.pathname == "/candidate" || location.pathname == "/privacy"){
       setPath('')
     }
+   
   },[location])
 
   return (
+    
     <>
     {
       path == "1"?<BlogDetail1/>:path == "2"?<BlogDetail2/>:path == "3"?<BlogDetail3/>:path == "4"?<BlogDetails/>:null
@@ -57,5 +59,6 @@ const PublicRoutes = () => {
   );
 };
 export default PublicRoutes;
+
 
 
