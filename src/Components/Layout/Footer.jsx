@@ -8,7 +8,7 @@ const Footer = () => {
     <div className="footer-nav">
     <ListGroup>
       <ListGroup.Item><Link to="/privacy">Privacy Policy</Link></ListGroup.Item>
-      <ListGroup.Item><Link to="/">Terms of Use</Link></ListGroup.Item>
+      <ListGroup.Item><Link to="">Terms of Use</Link></ListGroup.Item>
       <ListGroup.Item><Link to="/">Accessibility</Link></ListGroup.Item>
     </ListGroup>
       <div className="copyright">

@@ -171,6 +171,7 @@
     font-size: 20px;
     line-height: 24px;
     color: var(--secondary-color);
+    padding-right: 50px;
 }
 .contact-card .form-group.form-select-box {
     position: relative;
@@ -298,4 +299,14 @@
     .contact-submit .btn {
         padding: 15px 10px;
     }
+}
+
+.successMsg{
+    color:green;
+    text-align: center;
+}
+
+.errorMsg{
+    color: red;
+    text-align: center;
 }

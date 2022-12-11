@@ -8,7 +8,7 @@ import "./layoutStyle.css";
 
 const Header = () => {
   const { pathname } = useLocation()
-  console.log(123, pathname)
+
   return (
     <div>
       <div className="header-logo text-center">
@@ -32,19 +32,19 @@ const Header = () => {
                 <Link to="/" className={`${pathname === '/' ? "activeLink" : ''}`}>Home</Link>
               </Nav.Item>
               <Nav.Item>
-                <Link to="/About" className={`${pathname === '/About' ? "activeLink" : ''}`} >About</Link>
+                <Link to="/about" className={`${pathname === '/About' ? "activeLink" : ''}`} >About</Link>
               </Nav.Item>
               <Nav.Item>
-                <Link to="/Candidate"  className={`${pathname === '/Candidate' ? "activeLink" : ''}`}>Candidate</Link>
+                <Link to="/candidate"  className={`${pathname === '/Candidate' ? "activeLink" : ''}`}>Candidate</Link>
               </Nav.Item>
               <Nav.Item>
-                <Link to="/Employer"  className={`${pathname === '/Employer' ? "activeLink" : ''}`}>Employer</Link>
+                <Link to="/employer"  className={`${pathname === '/Employer' ? "activeLink" : ''}`}>Employer</Link>
               </Nav.Item>
               <Nav.Item>
-                <Link to="/Blog"  className={`${pathname === '/Blog' ? "activeLink" : ''}`}>Blog</Link>
+                <Link to="/blog"  className={`${pathname === '/Blog' ? "activeLink" : ''}`}>Blog</Link>
               </Nav.Item>
               <Nav.Item>
-                <Link to="/Contact"  className={`${pathname === '/Contact' ? "activeLink" : ''}`}>Contact</Link>
+                <Link to="/contact"  className={`${pathname === '/Contact' ? "activeLink" : ''}`}>Contact</Link>
               </Nav.Item>
             </Nav>
           </Navbar.Collapse>
@@ -55,3 +55,5 @@ const Header = () => {
 };
 
 export default Header;
+
+

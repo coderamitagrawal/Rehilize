@@ -1,7 +1,23 @@
 import React from 'react'
 import { Col, Row } from 'react-bootstrap';
+import { useLocation } from 'react-router-dom';
 import './Privacy.css'
+import { useEffect } from 'react';
+
+
 const Privacy = () => {
+const location = useLocation()
+
+  useEffect(()=>{
+    if(location.pathname == '/privacy'){
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+  },[])
+
+
   return (
     <div class="main-wrapper m-0">
       <div className='container'>
@@ -42,7 +58,7 @@ const Privacy = () => {
                 <li>CliftonStrengths® assessment - provided Gallup, Inc. <a href="https://www.gallup.com/cliftonstrengths/en/252137/home.aspx" target="blank">https://www.gallup.com/cliftonstrengths/en/252137/home.aspx</a> - Copyright © Gallup, Inc. All rights reserved.</li>
                 <li>Basic Interest Marker survey – developed by Dr. James Rounds et al at the University of Illinois. Liao, H-Y., Armstrong, P. I., & Rounds, J. (2008). Development and initial validation of public domain basic interest markers [Monograph]. Journal of Vocational Behavior. 73, 159-183.
                     <a href="https://www.sciencedirect.com/science/article/abs/pii/S0001879107001297?via%3Dihub" target="blank">https://doi.org/10.1016/j.jvb.2007.12.002 https://education.illinois.edu/faculty/james-rounds</a></li>
-                <li>Lectical Leadership Decision Making (LDMA) and Lectical Reflective Judgment Assessment (LRJA) – provided by Lectica, Inc. <a href="https://lecticalive.org/about/assessments#gsc.tab=0" target="blank">https://lecticalive.org/about/assessments#gsc.tab=0</a> – Copyright © Lectica, Inc. All rights reserved. </li>
+                <li>Lectical Leadership Decision Making (LDMA) and Lectical Reflective Judgment Assessment (LRJA) – provided by Lectica, Inc. <a href="https://lecticalive.org/about/assessments#gsc.tab=0" target="blank">https://lecticalive.org/about/assessments#gsc.tab=0</a> – Copyright © Lectica, Inc. All rights reserved.</li>
                 <li>Qualtrics Surveying platform – used to collect survey responses for the Basic Interest Marker survey. Licensed through a subscription service purchased by RHEALIZE. <a href="https://www.qualtrics.com/au/?rid=ip&prevsite=en&newsite=au&geo=IN&geomatch=au" target="blank">https://www.qualtrics.com/</a></li>
               </ul>
               <p>RHEALIZE also uses other third-party service providers for other purposes, including PayPal for payment processing and MailChimp for email campaigns for users who have chosen to be contacted via email.</p>
