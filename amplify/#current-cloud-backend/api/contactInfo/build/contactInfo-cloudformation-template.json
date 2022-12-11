@@ -368,7 +368,11 @@
         "Name": "contactInfo"
       }
     },
+<<<<<<< Updated upstream
     "contactInfoDefault4XXResponse211164a5": {
+=======
+    "contactInfoDefault4XXResponsec74448b3": {
+>>>>>>> Stashed changes
       "Type": "AWS::ApiGateway::GatewayResponse",
       "Properties": {
         "ResponseType": "DEFAULT_4XX",
@@ -383,7 +387,11 @@
         }
       }
     },
+<<<<<<< Updated upstream
     "contactInfoDefault5XXResponse211164a5": {
+=======
+    "contactInfoDefault5XXResponsec74448b3": {
+>>>>>>> Stashed changes
       "Type": "AWS::ApiGateway::GatewayResponse",
       "Properties": {
         "ResponseType": "DEFAULT_5XX",
@@ -398,7 +406,11 @@
         }
       }
     },
+<<<<<<< Updated upstream
     "DeploymentAPIGWcontactInfo794d0460": {
+=======
+    "DeploymentAPIGWcontactInfob402b12f": {
+>>>>>>> Stashed changes
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -416,8 +428,13 @@
         }
       },
       "DependsOn": [
+<<<<<<< Updated upstream
         "contactInfoDefault4XXResponse211164a5",
         "contactInfoDefault5XXResponse211164a5"
+=======
+        "contactInfoDefault4XXResponsec74448b3",
+        "contactInfoDefault5XXResponsec74448b3"
+>>>>>>> Stashed changes
       ]
     }
   }

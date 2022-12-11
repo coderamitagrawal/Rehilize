@@ -17,13 +17,25 @@
           "deploymentBucketName": "amplify-websitepublic-develop-230959-deployment",
           "s3Key": "amplify-builds/contactInfoLlambda-5a6f5a71597834614f6f-build.zip",
           "sesEmail": "hiteshgurjar786@gmail.com"
+        },
+        "employeeInfoLambda": {
+          "deploymentBucketName": "amplify-websitepublic-develop-230959-deployment",
+          "s3Key": "amplify-builds/employeeInfoLambda-6b794959733556517933-build.zip"
+        },
+        "candidateInfoLambda": {
+          "deploymentBucketName": "amplify-websitepublic-develop-230959-deployment",
+          "s3Key": "amplify-builds/candidateInfoLambda-494f444439584e6a4546-build.zip"
         }
       },
       "storage": {
-        "contactInfoDb": {}
+        "contactInfoDb": {},
+        "employeeInfoDb": {},
+        "candidateInfoDb": {}
       },
       "api": {
-        "contactInfo": {}
+        "contactInfo": {},
+        "employeeInfo": {},
+        "candidateInfo": {}
       }
     }
   }

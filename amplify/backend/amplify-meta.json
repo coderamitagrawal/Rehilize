@@ -16,6 +16,14 @@
     "contactInfoDb": {
       "service": "DynamoDB",
       "providerPlugin": "awscloudformation",
+<<<<<<< Updated upstream
+=======
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-websitepublic-develop-230959-deployment/amplify-cfn-templates/storage/contactInfoDb-cloudformation-template.json",
+        "logicalId": "storagecontactInfoDb"
+      },
+      "lastPushTimeStamp": "2022-12-11T07:38:14.191Z",
+>>>>>>> Stashed changes
       "output": {
         "PartitionKeyName": "email",
         "Region": "ca-central-1",
@@ -26,8 +34,40 @@
       },
       "lastPushTimeStamp": "2022-12-11T07:48:56.168Z",
       "providerMetadata": {
+<<<<<<< Updated upstream
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-websitepublic-develop-230959-deployment/amplify-cfn-templates/storage/contactInfoDb-cloudformation-template.json",
         "logicalId": "storagecontactInfoDb"
+=======
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-websitepublic-develop-230959-deployment/amplify-cfn-templates/storage/employeeInfoDb-cloudformation-template.json",
+        "logicalId": "storageemployeeInfoDb"
+      },
+      "lastPushTimeStamp": "2022-12-11T07:38:15.235Z",
+      "output": {
+        "PartitionKeyName": "email",
+        "Region": "ca-central-1",
+        "Arn": "arn:aws:dynamodb:ca-central-1:324455135251:table/employee-develop",
+        "StreamArn": "arn:aws:dynamodb:ca-central-1:324455135251:table/employee-develop/stream/2022-12-11T07:35:19.646",
+        "PartitionKeyType": "S",
+        "Name": "employee-develop"
+      },
+      "lastPushDirHash": "8AEsDCQBrRUVqftIBB9a3F7k634="
+    },
+    "candidateInfoDb": {
+      "service": "DynamoDB",
+      "providerPlugin": "awscloudformation",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-websitepublic-develop-230959-deployment/amplify-cfn-templates/storage/candidateInfoDb-cloudformation-template.json",
+        "logicalId": "storagecandidateInfoDb"
+      },
+      "lastPushTimeStamp": "2022-12-11T07:38:15.235Z",
+      "output": {
+        "PartitionKeyName": "email",
+        "Region": "ca-central-1",
+        "Arn": "arn:aws:dynamodb:ca-central-1:324455135251:table/candidate-develop",
+        "StreamArn": "arn:aws:dynamodb:ca-central-1:324455135251:table/candidate-develop/stream/2022-12-11T07:35:18.598",
+        "PartitionKeyType": "S",
+        "Name": "candidate-develop"
+>>>>>>> Stashed changes
       },
       "lastPushDirHash": "dAfgcW+Xf1FEsYj5wpokcYFszso="
     }
@@ -51,12 +91,29 @@
           }
         }
       ],
+<<<<<<< Updated upstream
+=======
+      "lastBuildTimeStamp": "2022-12-11T07:34:52.570Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2022-12-11T07:34:56.819Z",
+      "distZipFilename": "contactInfoLlambda-477234444c3869784863-build.zip",
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-websitepublic-develop-230959-deployment",
+        "s3Key": "amplify-builds/contactInfoLlambda-477234444c3869784863-build.zip"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-websitepublic-develop-230959-deployment/amplify-cfn-templates/function/contactInfoLlambda-cloudformation-template.json",
+        "logicalId": "functioncontactInfoLlambda"
+      },
+      "lastPushTimeStamp": "2022-12-11T07:38:15.235Z",
+>>>>>>> Stashed changes
       "output": {
         "Region": "ca-central-1",
         "Arn": "arn:aws:lambda:ca-central-1:324455135251:function:contactInfoLlambda-develop",
         "Name": "contactInfoLlambda-develop",
         "LambdaExecutionRole": "websitepublicLambdaRole30e47da1-develop"
       },
+<<<<<<< Updated upstream
       "lastPushTimeStamp": "2022-12-11T07:48:56.171Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-websitepublic-develop-230959-deployment/amplify-cfn-templates/function/contactInfoLlambda-cloudformation-template.json",
@@ -71,6 +128,87 @@
       "lastPackageTimeStamp": "2022-12-11T07:43:45.782Z",
       "distZipFilename": "contactInfoLlambda-5a6f5a71597834614f6f-build.zip",
       "lastPushDirHash": "1b5VKIS0rwoI5Uko0VQVxuK7LrQ="
+=======
+      "lastPushDirHash": "Z8D3o8+AQpb60kpjhtFNN5X+2VA="
+    },
+    "employeeInfoLambda": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "dependsOn": [
+        {
+          "category": "storage",
+          "resourceName": "employeeInfoDb",
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "attributeEnvMap": {
+            "Name": "TABLE_NAME",
+            "Arn": "TABLE_ARN"
+          }
+        }
+      ],
+      "lastBuildTimeStamp": "2022-12-11T07:34:52.566Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2022-12-11T07:34:53.897Z",
+      "distZipFilename": "employeeInfoLambda-6b794959733556517933-build.zip",
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-websitepublic-develop-230959-deployment",
+        "s3Key": "amplify-builds/employeeInfoLambda-6b794959733556517933-build.zip"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-websitepublic-develop-230959-deployment/amplify-cfn-templates/function/employeeInfoLambda-cloudformation-template.json",
+        "logicalId": "functionemployeeInfoLambda"
+      },
+      "lastPushTimeStamp": "2022-12-11T07:38:15.235Z",
+      "output": {
+        "Region": "ca-central-1",
+        "Arn": "arn:aws:lambda:ca-central-1:324455135251:function:employeeInfoLambda-develop",
+        "Name": "employeeInfoLambda-develop",
+        "LambdaExecutionRole": "websitepublicLambdaRole1829a284-develop"
+      },
+      "lastPushDirHash": "cvbm8JAqiFAsHbMznlUcZf3oQ1I="
+    },
+    "candidateInfoLambda": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "dependsOn": [
+        {
+          "category": "storage",
+          "resourceName": "candidateInfoDb",
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "attributeEnvMap": {
+            "Name": "TABLE_NAME",
+            "Arn": "TABLE_ARN"
+          }
+        }
+      ],
+      "lastBuildTimeStamp": "2022-12-11T07:34:52.569Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2022-12-11T07:34:53.943Z",
+      "distZipFilename": "candidateInfoLambda-494f444439584e6a4546-build.zip",
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-websitepublic-develop-230959-deployment",
+        "s3Key": "amplify-builds/candidateInfoLambda-494f444439584e6a4546-build.zip"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-websitepublic-develop-230959-deployment/amplify-cfn-templates/function/candidateInfoLambda-cloudformation-template.json",
+        "logicalId": "functioncandidateInfoLambda"
+      },
+      "lastPushTimeStamp": "2022-12-11T07:38:15.235Z",
+      "output": {
+        "Region": "ca-central-1",
+        "Arn": "arn:aws:lambda:ca-central-1:324455135251:function:candidateInfoLambda-develop",
+        "Name": "candidateInfoLambda-develop",
+        "LambdaExecutionRole": "websitepublicLambdaRolece8cba4d-develop"
+      },
+      "lastPushDirHash": "uPI6/vC9HHp/zfDxRSfN6o3o/kM="
+>>>>>>> Stashed changes
     }
   },
   "api": {
@@ -87,15 +225,75 @@
           ]
         }
       ],
+<<<<<<< Updated upstream
+=======
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-websitepublic-develop-230959-deployment/amplify-cfn-templates/api/contactInfo-cloudformation-template.json",
+        "logicalId": "apicontactInfo"
+      },
+      "lastPushTimeStamp": "2022-12-11T07:38:14.204Z",
+>>>>>>> Stashed changes
       "output": {
         "ApiName": "contactInfo",
         "RootUrl": "https://mza174k33b.execute-api.ca-central-1.amazonaws.com/develop",
         "ApiId": "mza174k33b"
       },
+<<<<<<< Updated upstream
       "lastPushTimeStamp": "2022-12-11T07:48:56.172Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-websitepublic-develop-230959-deployment/amplify-cfn-templates/api/contactInfo-cloudformation-template.json",
         "logicalId": "apicontactInfo"
+=======
+      "lastPushDirHash": "2FED73yO9W7av8uLPDMP7epnUKg="
+    },
+    "employeeInfo": {
+      "service": "API Gateway",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "employeeInfoLambda",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        }
+      ],
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-websitepublic-develop-230959-deployment/amplify-cfn-templates/api/employeeInfo-cloudformation-template.json",
+        "logicalId": "apiemployeeInfo"
+      },
+      "lastPushTimeStamp": "2022-12-11T07:38:15.235Z",
+      "output": {
+        "ApiName": "employeeInfo",
+        "RootUrl": "https://ozgnnmay3k.execute-api.ca-central-1.amazonaws.com/develop",
+        "ApiId": "ozgnnmay3k"
+      },
+      "lastPushDirHash": "h6Ek50YLTkoOPwTTbEgZ7Omgjj0="
+    },
+    "candidateInfo": {
+      "service": "API Gateway",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "candidateInfoLambda",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        }
+      ],
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-websitepublic-develop-230959-deployment/amplify-cfn-templates/api/candidateInfo-cloudformation-template.json",
+        "logicalId": "apicandidateInfo"
+      },
+      "lastPushTimeStamp": "2022-12-11T07:38:15.235Z",
+      "output": {
+        "ApiName": "candidateInfo",
+        "RootUrl": "https://74lc940yoh.execute-api.ca-central-1.amazonaws.com/develop",
+        "ApiId": "74lc940yoh"
+>>>>>>> Stashed changes
       },
       "lastPushDirHash": "2FED73yO9W7av8uLPDMP7epnUKg="
     }
