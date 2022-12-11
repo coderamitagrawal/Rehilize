@@ -15,7 +15,7 @@
       "function": {
         "contactInfoLlambda": {
           "deploymentBucketName": "amplify-websitepublic-develop-230959-deployment",
-          "s3Key": "amplify-builds/contactInfoLlambda-477234444c3869784863-build.zip",
+          "s3Key": "amplify-builds/contactInfoLlambda-5a6f5a71597834614f6f-build.zip",
           "sesEmail": "hiteshgurjar786@gmail.com"
         }
       },

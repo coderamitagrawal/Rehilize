@@ -165,6 +165,54 @@ const convertUrlType = (param, type) => {
  *************************************/
 
 const sendEmail = async () => {
+  // var params = {
+  //   Destination: {
+  //     /* required */
+  //     // CcAddresses: [
+  //     //   'EMAIL_ADDRESS',
+  //     //   /* more CC email addresses */
+  //     // ],
+  //     ToAddresses: [
+  //       process.env.SES_EMAIL,
+  //       /* more To email addresses */
+  //     ],
+  //   },
+  //   Source: process.env.SES_EMAIL /* required */,
+  //   Template: emailTemplate /* required */,
+  //   // TemplateData: '{ "user":"hitesh" }' /* required */,
+  //   // ReplyToAddresses: [
+  //   //   'EMAIL_ADDRESS'
+  //   // ],
+  // };
+
+  // var templatePromise = ses.createTemplate(params).promise();
+
+  // // Handle promise's fulfilled/rejected states
+  // templatePromise
+  //   .then(function (data) {
+  //     console.log(data);
+  //   })
+  //   .catch(function (err) {
+  //     console.error(err, err.stack);
+  //   });
+
+  // await ses
+  //   .sendEmail({
+  //     Destination: {
+  //       ToAddresses: ["hitesh.kanwar786@gmail.com"],
+  //     },
+  //     Source: process.env.SES_EMAIL,
+  //     Message: {
+  //       Subject: { Data: "Candidate Submission" },
+  //       Body: {
+  //         Text: {
+  //           Data: `My name is hitesh. You can reach me at hitesh  gurjar`,
+  //         },
+  //       },
+  //     },
+  //   })
+  //   .promise();
+  // return { value: true };
   await ses
     .sendEmail({
       Destination: {
@@ -196,11 +244,12 @@ app.post(path, function (req, res) {
     Item: req.body,
   };
   dynamodb.put(putItemParams, async (err, data) => {
+    console.log(11111, data);
     if (err) {
       res.statusCode = 500;
       res.json({ error: err, url: req.url, body: req.body });
     } else {
-      // await sendEmail();
+      await sendEmail();
       res.json({
         success: "contact info saved successfully!",
         url: req.url,

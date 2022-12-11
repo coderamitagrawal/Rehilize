@@ -3,18 +3,6 @@
     "contactInfoDb": {
       "service": "DynamoDB",
       "providerPlugin": "awscloudformation"
-    },
-    "employeeInfoDb": {
-      "service": "DynamoDB",
-      "providerPlugin": "awscloudformation"
-    },
-    "candidateInformationDb": {
-      "service": "DynamoDB",
-      "providerPlugin": "awscloudformation"
-    },
-    "candidateInfoDb": {
-      "service": "DynamoDB",
-      "providerPlugin": "awscloudformation"
     }
   },
   "function": {
@@ -36,44 +24,6 @@
           }
         }
       ]
-    },
-    "employeeInfoLambda": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda",
-      "dependsOn": [
-        {
-          "category": "storage",
-          "resourceName": "employeeInfoDb",
-          "attributes": [
-            "Name",
-            "Arn"
-          ],
-          "attributeEnvMap": {
-            "Name": "TABLE_NAME",
-            "Arn": "TABLE_ARN"
-          }
-        }
-      ]
-    },
-    "candidateInfoLambda": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda",
-      "dependsOn": [
-        {
-          "category": "storage",
-          "resourceName": "candidateInfoDb",
-          "attributes": [
-            "Name",
-            "Arn"
-          ],
-          "attributeEnvMap": {
-            "Name": "TABLE_NAME",
-            "Arn": "TABLE_ARN"
-          }
-        }
-      ]
     }
   },
   "api": {
@@ -84,34 +34,6 @@
         {
           "category": "function",
           "resourceName": "contactInfoLlambda",
-          "attributes": [
-            "Name",
-            "Arn"
-          ]
-        }
-      ]
-    },
-    "employeeInfo": {
-      "service": "API Gateway",
-      "providerPlugin": "awscloudformation",
-      "dependsOn": [
-        {
-          "category": "function",
-          "resourceName": "employeeInfoLambda",
-          "attributes": [
-            "Name",
-            "Arn"
-          ]
-        }
-      ]
-    },
-    "candidateInfo": {
-      "service": "API Gateway",
-      "providerPlugin": "awscloudformation",
-      "dependsOn": [
-        {
-          "category": "function",
-          "resourceName": "candidateInfoLambda",
           "attributes": [
             "Name",
             "Arn"
