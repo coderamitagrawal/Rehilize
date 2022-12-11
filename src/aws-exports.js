@@ -15,19 +15,6 @@ const awsmobile = {
             "name": "contactInfo",
             "endpoint": "https://mza174k33b.execute-api.ca-central-1.amazonaws.com/develop",
             "region": "ca-central-1"
-<<<<<<< Updated upstream
-=======
-        },
-        {
-            "name": "employeeInfo",
-            "endpoint": "https://ozgnnmay3k.execute-api.ca-central-1.amazonaws.com/develop",
-            "region": "ca-central-1"
-        },
-        {
-            "name": "candidateInfo",
-            "endpoint": "https://74lc940yoh.execute-api.ca-central-1.amazonaws.com/develop",
-            "region": "ca-central-1"
->>>>>>> Stashed changes
         }
     ]
 };

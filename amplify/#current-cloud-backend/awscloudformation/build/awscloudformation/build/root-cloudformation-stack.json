@@ -188,55 +188,6 @@
         }
       }
     },
-<<<<<<< Updated upstream
-=======
-    "functionemployeeInfoLambda": {
-      "Type": "AWS::CloudFormation::Stack",
-      "Properties": {
-        "TemplateURL": "https://s3.amazonaws.com/amplify-websitepublic-develop-230959-deployment/amplify-cfn-templates/function/employeeInfoLambda-cloudformation-template.json",
-        "Parameters": {
-          "deploymentBucketName": "amplify-websitepublic-develop-230959-deployment",
-          "s3Key": "amplify-builds/employeeInfoLambda-6b794959733556517933-build.zip",
-          "storageemployeeInfoDbName": {
-            "Fn::GetAtt": [
-              "storageemployeeInfoDb",
-              "Outputs.Name"
-            ]
-          },
-          "storageemployeeInfoDbArn": {
-            "Fn::GetAtt": [
-              "storageemployeeInfoDb",
-              "Outputs.Arn"
-            ]
-          },
-          "env": "develop"
-        }
-      }
-    },
-    "functioncandidateInfoLambda": {
-      "Type": "AWS::CloudFormation::Stack",
-      "Properties": {
-        "TemplateURL": "https://s3.amazonaws.com/amplify-websitepublic-develop-230959-deployment/amplify-cfn-templates/function/candidateInfoLambda-cloudformation-template.json",
-        "Parameters": {
-          "deploymentBucketName": "amplify-websitepublic-develop-230959-deployment",
-          "s3Key": "amplify-builds/candidateInfoLambda-494f444439584e6a4546-build.zip",
-          "storagecandidateInfoDbName": {
-            "Fn::GetAtt": [
-              "storagecandidateInfoDb",
-              "Outputs.Name"
-            ]
-          },
-          "storagecandidateInfoDbArn": {
-            "Fn::GetAtt": [
-              "storagecandidateInfoDb",
-              "Outputs.Arn"
-            ]
-          },
-          "env": "develop"
-        }
-      }
-    },
->>>>>>> Stashed changes
     "apicontactInfo": {
       "Type": "AWS::CloudFormation::Stack",
       "Properties": {
