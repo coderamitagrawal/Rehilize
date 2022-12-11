@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/addEmployee": {
+      "name": "/addEmployee",
+      "lambdaFunction": "employeeInfoLambda",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "resourceName": "candidateInfoDb",
+  "tableName": "candidate",
+  "partitionKey": {
+    "fieldName": "email",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}

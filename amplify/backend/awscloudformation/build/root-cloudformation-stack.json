@@ -1,0 +1,325 @@
+{
+  "Description": "Root Stack for AWS Amplify Console",
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Parameters": {
+    "DeploymentBucketName": {
+      "Type": "String",
+      "Default": "DeploymentBucket",
+      "Description": "Name of the common deployment bucket provided by the parent stack"
+    },
+    "AuthRoleName": {
+      "Type": "String",
+      "Default": "AuthRoleName",
+      "Description": "Name of the common deployment bucket provided by the parent stack"
+    },
+    "UnauthRoleName": {
+      "Type": "String",
+      "Default": "UnAuthRoleName",
+      "Description": "Name of the common deployment bucket provided by the parent stack"
+    }
+  },
+  "Outputs": {
+    "Region": {
+      "Description": "CloudFormation provider root stack Region",
+      "Value": {
+        "Ref": "AWS::Region"
+      },
+      "Export": {
+        "Name": {
+          "Fn::Sub": "${AWS::StackName}-Region"
+        }
+      }
+    },
+    "StackName": {
+      "Description": "CloudFormation provider root stack ID",
+      "Value": {
+        "Ref": "AWS::StackName"
+      },
+      "Export": {
+        "Name": {
+          "Fn::Sub": "${AWS::StackName}-StackName"
+        }
+      }
+    },
+    "StackId": {
+      "Description": "CloudFormation provider root stack name",
+      "Value": {
+        "Ref": "AWS::StackId"
+      },
+      "Export": {
+        "Name": {
+          "Fn::Sub": "${AWS::StackName}-StackId"
+        }
+      }
+    },
+    "AuthRoleArn": {
+      "Value": {
+        "Fn::GetAtt": [
+          "AuthRole",
+          "Arn"
+        ]
+      }
+    },
+    "UnauthRoleArn": {
+      "Value": {
+        "Fn::GetAtt": [
+          "UnauthRole",
+          "Arn"
+        ]
+      }
+    },
+    "DeploymentBucketName": {
+      "Description": "CloudFormation provider root stack deployment bucket name",
+      "Value": {
+        "Ref": "DeploymentBucketName"
+      },
+      "Export": {
+        "Name": {
+          "Fn::Sub": "${AWS::StackName}-DeploymentBucketName"
+        }
+      }
+    },
+    "AuthRoleName": {
+      "Value": {
+        "Ref": "AuthRole"
+      }
+    },
+    "UnauthRoleName": {
+      "Value": {
+        "Ref": "UnauthRole"
+      }
+    }
+  },
+  "Resources": {
+    "DeploymentBucket": {
+      "Type": "AWS::S3::Bucket",
+      "Properties": {
+        "BucketName": {
+          "Ref": "DeploymentBucketName"
+        },
+        "BucketEncryption": {
+          "ServerSideEncryptionConfiguration": [
+            {
+              "ServerSideEncryptionByDefault": {
+                "SSEAlgorithm": "AES256"
+              }
+            }
+          ]
+        }
+      },
+      "UpdateReplacePolicy": "Retain",
+      "DeletionPolicy": "Retain"
+    },
+    "AuthRole": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Sid": "",
+              "Effect": "Deny",
+              "Principal": {
+                "Federated": "cognito-identity.amazonaws.com"
+              },
+              "Action": "sts:AssumeRoleWithWebIdentity"
+            }
+          ]
+        },
+        "RoleName": {
+          "Ref": "AuthRoleName"
+        }
+      }
+    },
+    "UnauthRole": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Sid": "",
+              "Effect": "Deny",
+              "Principal": {
+                "Federated": "cognito-identity.amazonaws.com"
+              },
+              "Action": "sts:AssumeRoleWithWebIdentity"
+            }
+          ]
+        },
+        "RoleName": {
+          "Ref": "UnauthRoleName"
+        }
+      }
+    },
+    "storagecontactInfoDb": {
+      "Type": "AWS::CloudFormation::Stack",
+      "Properties": {
+        "TemplateURL": "https://s3.amazonaws.com/amplify-websitepublic-develop-230959-deployment/amplify-cfn-templates/storage/contactInfoDb-cloudformation-template.json",
+        "Parameters": {
+          "tableName": "contact",
+          "partitionKeyName": "email",
+          "partitionKeyType": "S",
+          "env": "develop"
+        }
+      }
+    },
+    "storageemployeeInfoDb": {
+      "Type": "AWS::CloudFormation::Stack",
+      "Properties": {
+        "TemplateURL": "https://s3.amazonaws.com/amplify-websitepublic-develop-230959-deployment/amplify-cfn-templates/storage/employeeInfoDb-cloudformation-template.json",
+        "Parameters": {
+          "tableName": "employee",
+          "partitionKeyName": "email",
+          "partitionKeyType": "S",
+          "env": "develop"
+        }
+      }
+    },
+    "storagecandidateInfoDb": {
+      "Type": "AWS::CloudFormation::Stack",
+      "Properties": {
+        "TemplateURL": "https://s3.amazonaws.com/amplify-websitepublic-develop-230959-deployment/amplify-cfn-templates/storage/candidateInfoDb-cloudformation-template.json",
+        "Parameters": {
+          "tableName": "candidate",
+          "partitionKeyName": "email",
+          "partitionKeyType": "S",
+          "env": "develop"
+        }
+      }
+    },
+    "functioncontactInfoLlambda": {
+      "Type": "AWS::CloudFormation::Stack",
+      "Properties": {
+        "TemplateURL": "https://s3.amazonaws.com/amplify-websitepublic-develop-230959-deployment/amplify-cfn-templates/function/contactInfoLlambda-cloudformation-template.json",
+        "Parameters": {
+          "deploymentBucketName": "amplify-websitepublic-develop-230959-deployment",
+          "s3Key": "amplify-builds/contactInfoLlambda-477234444c3869784863-build.zip",
+          "sesEmail": "hiteshgurjar786@gmail.com",
+          "storagecontactInfoDbName": {
+            "Fn::GetAtt": [
+              "storagecontactInfoDb",
+              "Outputs.Name"
+            ]
+          },
+          "storagecontactInfoDbArn": {
+            "Fn::GetAtt": [
+              "storagecontactInfoDb",
+              "Outputs.Arn"
+            ]
+          },
+          "env": "develop"
+        }
+      }
+    },
+    "functionemployeeInfoLambda": {
+      "Type": "AWS::CloudFormation::Stack",
+      "Properties": {
+        "TemplateURL": "https://s3.amazonaws.com/amplify-websitepublic-develop-230959-deployment/amplify-cfn-templates/function/employeeInfoLambda-cloudformation-template.json",
+        "Parameters": {
+          "deploymentBucketName": "amplify-websitepublic-develop-230959-deployment",
+          "s3Key": "amplify-builds/employeeInfoLambda-6b794959733556517933-build.zip",
+          "storageemployeeInfoDbName": {
+            "Fn::GetAtt": [
+              "storageemployeeInfoDb",
+              "Outputs.Name"
+            ]
+          },
+          "storageemployeeInfoDbArn": {
+            "Fn::GetAtt": [
+              "storageemployeeInfoDb",
+              "Outputs.Arn"
+            ]
+          },
+          "env": "develop"
+        }
+      }
+    },
+    "functioncandidateInfoLambda": {
+      "Type": "AWS::CloudFormation::Stack",
+      "Properties": {
+        "TemplateURL": "https://s3.amazonaws.com/amplify-websitepublic-develop-230959-deployment/amplify-cfn-templates/function/candidateInfoLambda-cloudformation-template.json",
+        "Parameters": {
+          "deploymentBucketName": "amplify-websitepublic-develop-230959-deployment",
+          "s3Key": "amplify-builds/candidateInfoLambda-67683563457a614b3441-build.zip",
+          "storagecandidateInfoDbName": {
+            "Fn::GetAtt": [
+              "storagecandidateInfoDb",
+              "Outputs.Name"
+            ]
+          },
+          "storagecandidateInfoDbArn": {
+            "Fn::GetAtt": [
+              "storagecandidateInfoDb",
+              "Outputs.Arn"
+            ]
+          },
+          "env": "develop"
+        }
+      }
+    },
+    "apicontactInfo": {
+      "Type": "AWS::CloudFormation::Stack",
+      "Properties": {
+        "TemplateURL": "https://s3.amazonaws.com/amplify-websitepublic-develop-230959-deployment/amplify-cfn-templates/api/contactInfo-cloudformation-template.json",
+        "Parameters": {
+          "functioncontactInfoLlambdaName": {
+            "Fn::GetAtt": [
+              "functioncontactInfoLlambda",
+              "Outputs.Name"
+            ]
+          },
+          "functioncontactInfoLlambdaArn": {
+            "Fn::GetAtt": [
+              "functioncontactInfoLlambda",
+              "Outputs.Arn"
+            ]
+          },
+          "env": "develop"
+        }
+      }
+    },
+    "apiemployeeInfo": {
+      "Type": "AWS::CloudFormation::Stack",
+      "Properties": {
+        "TemplateURL": "https://s3.amazonaws.com/amplify-websitepublic-develop-230959-deployment/amplify-cfn-templates/api/employeeInfo-cloudformation-template.json",
+        "Parameters": {
+          "functionemployeeInfoLambdaName": {
+            "Fn::GetAtt": [
+              "functionemployeeInfoLambda",
+              "Outputs.Name"
+            ]
+          },
+          "functionemployeeInfoLambdaArn": {
+            "Fn::GetAtt": [
+              "functionemployeeInfoLambda",
+              "Outputs.Arn"
+            ]
+          },
+          "env": "develop"
+        }
+      }
+    },
+    "apicandidateInfo": {
+      "Type": "AWS::CloudFormation::Stack",
+      "Properties": {
+        "TemplateURL": "https://s3.amazonaws.com/amplify-websitepublic-develop-230959-deployment/amplify-cfn-templates/api/candidateInfo-cloudformation-template.json",
+        "Parameters": {
+          "functioncandidateInfoLambdaName": {
+            "Fn::GetAtt": [
+              "functioncandidateInfoLambda",
+              "Outputs.Name"
+            ]
+          },
+          "functioncandidateInfoLambdaArn": {
+            "Fn::GetAtt": [
+              "functioncandidateInfoLambda",
+              "Outputs.Arn"
+            ]
+          },
+          "env": "develop"
+        }
+      }
+    }
+  }
+}

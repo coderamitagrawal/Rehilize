@@ -1,0 +1,5 @@
+{
+  "tableName": "candidate",
+  "partitionKeyName": "email",
+  "partitionKeyType": "S"
+}

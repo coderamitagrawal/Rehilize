@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/addContact": {
+      "name": "/addContact",
+      "lambdaFunction": "contactInfoLlambda",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}

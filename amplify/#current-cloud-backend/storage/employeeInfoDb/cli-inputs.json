@@ -1,0 +1,10 @@
+{
+  "resourceName": "employeeInfoDb",
+  "tableName": "employee",
+  "partitionKey": {
+    "fieldName": "email",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}
