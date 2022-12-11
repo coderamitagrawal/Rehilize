@@ -24,7 +24,7 @@
         "PartitionKeyType": "S",
         "Name": "contact-develop"
       },
-      "lastPushTimeStamp": "2022-12-11T08:33:14.835Z",
+      "lastPushTimeStamp": "2022-12-11T20:21:29.689Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-websitepublic-develop-230959-deployment/amplify-cfn-templates/storage/contactInfoDb-cloudformation-template.json",
         "logicalId": "storagecontactInfoDb"
@@ -57,7 +57,7 @@
         "Name": "contactInfoLlambda-develop",
         "LambdaExecutionRole": "websitepublicLambdaRole30e47da1-develop"
       },
-      "lastPushTimeStamp": "2022-12-11T08:33:14.838Z",
+      "lastPushTimeStamp": "2022-12-11T20:21:29.696Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-websitepublic-develop-230959-deployment/amplify-cfn-templates/function/contactInfoLlambda-cloudformation-template.json",
         "logicalId": "functioncontactInfoLlambda"
@@ -92,7 +92,7 @@
         "RootUrl": "https://mza174k33b.execute-api.ca-central-1.amazonaws.com/develop",
         "ApiId": "mza174k33b"
       },
-      "lastPushTimeStamp": "2022-12-11T08:33:14.839Z",
+      "lastPushTimeStamp": "2022-12-11T20:21:29.697Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-websitepublic-develop-230959-deployment/amplify-cfn-templates/api/contactInfo-cloudformation-template.json",
         "logicalId": "apicontactInfo"
