@@ -368,7 +368,7 @@
         "Name": "contactInfo"
       }
     },
-    "contactInfoDefault4XXResponse53be8d01": {
+    "contactInfoDefault4XXResponsef7fa5a0c": {
       "Type": "AWS::ApiGateway::GatewayResponse",
       "Properties": {
         "ResponseType": "DEFAULT_4XX",
@@ -383,7 +383,7 @@
         }
       }
     },
-    "contactInfoDefault5XXResponse53be8d01": {
+    "contactInfoDefault5XXResponsef7fa5a0c": {
       "Type": "AWS::ApiGateway::GatewayResponse",
       "Properties": {
         "ResponseType": "DEFAULT_5XX",
@@ -398,7 +398,7 @@
         }
       }
     },
-    "DeploymentAPIGWcontactInfod4e486a0": {
+    "DeploymentAPIGWcontactInfo6c238b04": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -416,8 +416,8 @@
         }
       },
       "DependsOn": [
-        "contactInfoDefault4XXResponse53be8d01",
-        "contactInfoDefault5XXResponse53be8d01"
+        "contactInfoDefault4XXResponsef7fa5a0c",
+        "contactInfoDefault5XXResponsef7fa5a0c"
       ]
     }
   }

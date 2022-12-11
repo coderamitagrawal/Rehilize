@@ -8,12 +8,30 @@ const awsmobile = {
         {
             "tableName": "contact-develop",
             "region": "ca-central-1"
+        },
+        {
+            "tableName": "candidateDb-develop",
+            "region": "ca-central-1"
+        },
+        {
+            "tableName": "employeeDb-develop",
+            "region": "ca-central-1"
         }
     ],
     "aws_cloud_logic_custom": [
         {
             "name": "contactInfo",
             "endpoint": "https://mza174k33b.execute-api.ca-central-1.amazonaws.com/develop",
+            "region": "ca-central-1"
+        },
+        {
+            "name": "candidate",
+            "endpoint": "https://uk241l62g4.execute-api.ca-central-1.amazonaws.com/develop",
+            "region": "ca-central-1"
+        },
+        {
+            "name": "employee",
+            "endpoint": "https://mt88x0nm7j.execute-api.ca-central-1.amazonaws.com/develop",
             "region": "ca-central-1"
         }
     ]

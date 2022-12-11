@@ -164,6 +164,30 @@
         }
       }
     },
+    "storagecandidateDb": {
+      "Type": "AWS::CloudFormation::Stack",
+      "Properties": {
+        "TemplateURL": "https://s3.amazonaws.com/amplify-websitepublic-develop-230959-deployment/amplify-cfn-templates/storage/candidateDb-cloudformation-template.json",
+        "Parameters": {
+          "tableName": "candidateDb",
+          "partitionKeyName": "email",
+          "partitionKeyType": "S",
+          "env": "develop"
+        }
+      }
+    },
+    "storageemployeeDb": {
+      "Type": "AWS::CloudFormation::Stack",
+      "Properties": {
+        "TemplateURL": "https://s3.amazonaws.com/amplify-websitepublic-develop-230959-deployment/amplify-cfn-templates/storage/employeeDb-cloudformation-template.json",
+        "Parameters": {
+          "tableName": "employeeDb",
+          "partitionKeyName": "email",
+          "partitionKeyType": "S",
+          "env": "develop"
+        }
+      }
+    },
     "functioncontactInfoLlambda": {
       "Type": "AWS::CloudFormation::Stack",
       "Properties": {
@@ -188,6 +212,52 @@
         }
       }
     },
+    "functioncandidateLambda": {
+      "Type": "AWS::CloudFormation::Stack",
+      "Properties": {
+        "TemplateURL": "https://s3.amazonaws.com/amplify-websitepublic-develop-230959-deployment/amplify-cfn-templates/function/candidateLambda-cloudformation-template.json",
+        "Parameters": {
+          "deploymentBucketName": "amplify-websitepublic-develop-230959-deployment",
+          "s3Key": "amplify-builds/candidateLambda-496b756b4979346d4a65-build.zip",
+          "storagecandidateDbName": {
+            "Fn::GetAtt": [
+              "storagecandidateDb",
+              "Outputs.Name"
+            ]
+          },
+          "storagecandidateDbArn": {
+            "Fn::GetAtt": [
+              "storagecandidateDb",
+              "Outputs.Arn"
+            ]
+          },
+          "env": "develop"
+        }
+      }
+    },
+    "functionemployeeLambda": {
+      "Type": "AWS::CloudFormation::Stack",
+      "Properties": {
+        "TemplateURL": "https://s3.amazonaws.com/amplify-websitepublic-develop-230959-deployment/amplify-cfn-templates/function/employeeLambda-cloudformation-template.json",
+        "Parameters": {
+          "deploymentBucketName": "amplify-websitepublic-develop-230959-deployment",
+          "s3Key": "amplify-builds/employeeLambda-684779636b6165346a4c-build.zip",
+          "storageemployeeDbName": {
+            "Fn::GetAtt": [
+              "storageemployeeDb",
+              "Outputs.Name"
+            ]
+          },
+          "storageemployeeDbArn": {
+            "Fn::GetAtt": [
+              "storageemployeeDb",
+              "Outputs.Arn"
+            ]
+          },
+          "env": "develop"
+        }
+      }
+    },
     "apicontactInfo": {
       "Type": "AWS::CloudFormation::Stack",
       "Properties": {
@@ -202,6 +272,48 @@
           "functioncontactInfoLlambdaArn": {
             "Fn::GetAtt": [
               "functioncontactInfoLlambda",
+              "Outputs.Arn"
+            ]
+          },
+          "env": "develop"
+        }
+      }
+    },
+    "apicandidate": {
+      "Type": "AWS::CloudFormation::Stack",
+      "Properties": {
+        "TemplateURL": "https://s3.amazonaws.com/amplify-websitepublic-develop-230959-deployment/amplify-cfn-templates/api/candidate-cloudformation-template.json",
+        "Parameters": {
+          "functioncandidateLambdaName": {
+            "Fn::GetAtt": [
+              "functioncandidateLambda",
+              "Outputs.Name"
+            ]
+          },
+          "functioncandidateLambdaArn": {
+            "Fn::GetAtt": [
+              "functioncandidateLambda",
+              "Outputs.Arn"
+            ]
+          },
+          "env": "develop"
+        }
+      }
+    },
+    "apiemployee": {
+      "Type": "AWS::CloudFormation::Stack",
+      "Properties": {
+        "TemplateURL": "https://s3.amazonaws.com/amplify-websitepublic-develop-230959-deployment/amplify-cfn-templates/api/employee-cloudformation-template.json",
+        "Parameters": {
+          "functionemployeeLambdaName": {
+            "Fn::GetAtt": [
+              "functionemployeeLambda",
+              "Outputs.Name"
+            ]
+          },
+          "functionemployeeLambdaArn": {
+            "Fn::GetAtt": [
+              "functionemployeeLambda",
               "Outputs.Arn"
             ]
           },

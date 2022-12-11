@@ -13,17 +13,29 @@
     },
     "categories": {
       "storage": {
-        "contactInfoDb": {}
+        "contactInfoDb": {},
+        "candidateDb": {},
+        "employeeDb": {}
       },
       "function": {
         "contactInfoLlambda": {
           "deploymentBucketName": "amplify-websitepublic-develop-230959-deployment",
           "s3Key": "amplify-builds/contactInfoLlambda-5a6f5a71597834614f6f-build.zip",
           "sesEmail": "hiteshgurjar786@gmail.com"
+        },
+        "candidateLambda": {
+          "deploymentBucketName": "amplify-websitepublic-develop-230959-deployment",
+          "s3Key": "amplify-builds/candidateLambda-496b756b4979346d4a65-build.zip"
+        },
+        "employeeLambda": {
+          "deploymentBucketName": "amplify-websitepublic-develop-230959-deployment",
+          "s3Key": "amplify-builds/employeeLambda-684779636b6165346a4c-build.zip"
         }
       },
       "api": {
-        "contactInfo": {}
+        "contactInfo": {},
+        "candidate": {},
+        "employee": {}
       }
     }
   }
