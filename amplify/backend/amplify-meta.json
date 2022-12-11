@@ -23,6 +23,9 @@
         "logicalId": "storagecontactInfoDb"
       },
       "lastPushTimeStamp": "2022-12-11T07:38:14.191Z",
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
       "output": {
         "PartitionKeyName": "email",
@@ -92,7 +95,10 @@
         }
       ],
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
       "lastBuildTimeStamp": "2022-12-11T07:34:52.570Z",
       "lastBuildType": "PROD",
       "lastPackageTimeStamp": "2022-12-11T07:34:56.819Z",
@@ -106,6 +112,9 @@
         "logicalId": "functioncontactInfoLlambda"
       },
       "lastPushTimeStamp": "2022-12-11T07:38:15.235Z",
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
       "output": {
         "Region": "ca-central-1",
@@ -208,6 +217,9 @@
         "LambdaExecutionRole": "websitepublicLambdaRolece8cba4d-develop"
       },
       "lastPushDirHash": "uPI6/vC9HHp/zfDxRSfN6o3o/kM="
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     }
   },
@@ -232,6 +244,9 @@
         "logicalId": "apicontactInfo"
       },
       "lastPushTimeStamp": "2022-12-11T07:38:14.204Z",
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
       "output": {
         "ApiName": "contactInfo",
@@ -293,6 +308,9 @@
         "ApiName": "candidateInfo",
         "RootUrl": "https://74lc940yoh.execute-api.ca-central-1.amazonaws.com/develop",
         "ApiId": "74lc940yoh"
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
       },
       "lastPushDirHash": "2FED73yO9W7av8uLPDMP7epnUKg="
