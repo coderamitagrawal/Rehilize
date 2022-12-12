@@ -249,7 +249,7 @@ app.post(path, function (req, res) {
       res.statusCode = 500;
       res.json({ error: err, url: req.url, body: req.body });
     } else {
-      await sendEmail();
+      // await sendEmail();
       res.json({
         success: "contact info saved successfully!",
         url: req.url,

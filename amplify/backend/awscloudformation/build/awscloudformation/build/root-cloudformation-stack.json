@@ -194,7 +194,7 @@
         "TemplateURL": "https://s3.amazonaws.com/amplify-websitepublic-develop-230959-deployment/amplify-cfn-templates/function/contactInfoLlambda-cloudformation-template.json",
         "Parameters": {
           "deploymentBucketName": "amplify-websitepublic-develop-230959-deployment",
-          "s3Key": "amplify-builds/contactInfoLlambda-5a6f5a71597834614f6f-build.zip",
+          "s3Key": "amplify-builds/contactInfoLlambda-436f6b35446a53426d58-build.zip",
           "sesEmail": "hiteshgurjar786@gmail.com",
           "storagecontactInfoDbName": {
             "Fn::GetAtt": [
@@ -218,7 +218,7 @@
         "TemplateURL": "https://s3.amazonaws.com/amplify-websitepublic-develop-230959-deployment/amplify-cfn-templates/function/candidateLambda-cloudformation-template.json",
         "Parameters": {
           "deploymentBucketName": "amplify-websitepublic-develop-230959-deployment",
-          "s3Key": "amplify-builds/candidateLambda-496b756b4979346d4a65-build.zip",
+          "s3Key": "amplify-builds/candidateLambda-48533641783679476642-build.zip",
           "storagecandidateDbName": {
             "Fn::GetAtt": [
               "storagecandidateDb",
@@ -241,7 +241,7 @@
         "TemplateURL": "https://s3.amazonaws.com/amplify-websitepublic-develop-230959-deployment/amplify-cfn-templates/function/employeeLambda-cloudformation-template.json",
         "Parameters": {
           "deploymentBucketName": "amplify-websitepublic-develop-230959-deployment",
-          "s3Key": "amplify-builds/employeeLambda-684779636b6165346a4c-build.zip",
+          "s3Key": "amplify-builds/employeeLambda-6e6645647a4d7968736f-build.zip",
           "storageemployeeDbName": {
             "Fn::GetAtt": [
               "storageemployeeDb",

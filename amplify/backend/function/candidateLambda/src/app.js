@@ -14,6 +14,7 @@ const express = require("express");
 AWS.config.update({ region: process.env.TABLE_REGION });
 
 const dynamodb = new AWS.DynamoDB.DocumentClient();
+const ses = new AWS.SES();
 
 let tableName = "candidateDb";
 if (process.env.ENV && process.env.ENV !== "NONE") {
@@ -53,19 +54,19 @@ const convertUrlType = (param, type) => {
   }
 };
 
-const sendEmail = async () => {
+const sendWelcomeEmail = async (email) => {
   await ses
     .sendEmail({
       Destination: {
-        ToAddresses: [process.env.SES_EMAIL],
+        ToAddresses: ["hiteshgurjar786@gmail.com"],
       },
-      Source: process.env.SES_EMAIL,
+      Source: "hiteshgurjar786@gmail.com",
       Message: {
         Subject: { Data: "Candidate Submission" },
         Body: {
           Html: {
             Charset: "UTF-8",
-            Data: `<h1 style="color:red">Hi</h1> <br/> My name is hitesh. You can reach me at hitesh  gurjar`,
+            Data: `<h1 style="color:red">Hi</h1> <br/> My name is hitesh. You can reach me at hitesh  gurjar  <a href="https://development.dr8ye020uhah2.amplifyapp.com/unsubscribe/candidate/${email}">Visit W3Schools.com!</a> `,
           },
         },
       },
@@ -209,7 +210,7 @@ app.post(path, function (req, res) {
       res.statusCode = 500;
       res.json({ error: err, url: req.url, body: req.body });
     } else {
-      await sendEmail();
+      await sendWelcomeEmail(req.body["email"]);
       res.json({ success: "post call succeed!", url: req.url, data: data });
     }
   });

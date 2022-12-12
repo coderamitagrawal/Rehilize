@@ -1,6 +1,6 @@
 [
   {
-    "Action": [],
-    "Resource": []
+    "Action": ["ses:SendEmail", "ses:SendRawEmail"],
+    "Resource": ["arn:aws:ses:ca-central-1:324455135251:identity/hiteshgurjar786@gmail.com"]
   }
 ]
