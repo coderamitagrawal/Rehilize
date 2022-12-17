@@ -28,7 +28,7 @@ const Candidate = () => {
 
   const postCandidate = (values) => {
     
-    axios.post(candBaseUrl, values).then(
+    axios.post(candBaseUrl,{}).then(
       (response) => {
         setResponse({ success: response.data.success });
         setShow(true);
@@ -268,7 +268,7 @@ const Candidate = () => {
                         className="btn button-dark mb-4 mt-5 text-uppercase"
                       >
                         Submit
-                      </Button>
+                      </Button> 
                       <h5
                         className={response.success ? "successMsg" : "errorMsg"}
                       >

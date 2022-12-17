@@ -11,6 +11,10 @@ import BlogDetails from "../Pages/BlogDetails/BlogDetails";
 import BlogDetail1 from "../Pages/BlogDetails/BlogDetail1";
 import BlogDetail2 from "../Pages/BlogDetails/BlogDetail2";
 import BlogDetail3 from "../Pages/BlogDetails/BlogDetail3";
+import UnSubscribeEmployer from "../Pages/Unsubscribe/unSubscribeEmployer";
+import UnSubscribeCandidate from "../Pages/Unsubscribe/unSubscribeCandidate";
+import EmployerSettingForm from "../Pages/Employer/EmployerSettingForm";
+import CandidateSettingForm from "../Pages/Candidate/CandidateSettingForm";
 
 const PublicRoutes = () => {
   
@@ -53,6 +57,10 @@ const PublicRoutes = () => {
       <Route path="/contact" element={<Contact />} />
       <Route path="/privacy" element={<Privacy />} />
       <Route path = "/blogDetails" element = {<BlogDetails/>}/>
+      <Route path="/unsubscribe/employer/:id" element={ <UnSubscribeEmployer /> }/>
+      <Route path="/unsubscribe/candidate/:id" element={ <UnSubscribeCandidate />  }/>
+      <Route path="/employer/setting/:id" element={<EmployerSettingForm />} />
+      <Route path="/candidate/setting/:id" element={<CandidateSettingForm />} />
     </Routes>
 
     </>

@@ -1,0 +1,170 @@
+.unsubscribe-page-wrapper h1 {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 35px;
+    font-family: 'Baskerville';
+    color: #13184D;
+    text-align: center;
+    margin: 60px 0 40px;
+}
+
+.unsubscribe-page-wrapper p {
+    font-size: 17px;
+    line-height: 32px;
+    color: #000000;
+}
+
+p.unsubscribe-question {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 32px;
+    color: #13184D;
+    margin-bottom: 17px;
+}
+
+.unsubscribe-question span {
+    color: #13184D;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 40px;
+    display: block;
+}
+
+.unsubscribe-employer-question span {
+    font-size: 17px;
+    line-height: 32px;
+    color: #000000;
+    font-weight: 400;
+    display: block;
+  }
+
+.candidateSelect{
+    font-size: 17px;
+    line-height: 32px;
+    color: #000000;
+    font-weight: 400;
+    display: block;
+}
+.unsubscribe-checkbox-wrapper {
+    padding-left: 50px
+}
+
+.contact-card.unsubscribe-form-card .form-check.check-right .form-check-label {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 40px;
+    color: #13184D;
+}
+
+.unsubscribe-form-card {
+    padding: 30px 0;
+    max-width: 600px;
+    margin: 0 auto;
+    border: none;
+    background: transparent
+}
+.candidate-unsubscribe-card{
+    padding: 30px 30px;
+  }
+  
+.unsubscribe-form-card .form-check-input {
+    margin: 0
+}
+
+.unsubscribe-form-card.contact-card .form-check.check-right {
+    align-items: center;
+    margin: 10px 0;
+}
+
+.contant-link-wrapper {
+    margin-top: 70px
+}
+
+.contant-link-wrapper a {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 32px;
+    color: #13184D;
+}
+
+.contant-link-wrapper a.web-link {
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.unsubscribe-page-wrapper .content-detail {
+    font-family: var(--font-primary);
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 32px;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.linkedin-img {
+    max-width: 33px;
+}
+
+.contact-card.unsubscribe-form-card .form-check.check-big .form-check-input {
+    width: 55px;
+}
+
+.unsubscribe-link {
+    color: #13184D;
+    font-weight: 600;
+}
+.unsubscribe-submit-btn{
+    margin-bottom: 50px;
+}
+.update-message{
+    margin-bottom: 60px !important;
+}
+@media only screen and (max-width: 992px) {
+    .unsubscribe-page-wrapper {
+        padding: 0 10px;
+    }
+    .unsubscribe-page-wrapper h1{
+        margin: 30px 20px;
+        font-size: 24px;
+    }
+    .unsubscribe-question span{
+        font-size: 16px;
+    }
+    .candidate-unsubscribe-card{
+        padding: 20px 0
+    }
+    .contact-card.unsubscribe-form-card .form-check.check-right .form-check-label {
+        font-size: 16px;
+        line-height: 25px;
+    }
+    .unsubscribe-page-wrapper p{
+        font-size: 16px;
+    }
+    .unsubscribe-checkbox-wrapper{
+        padding-left: 0;
+    }
+    .contant-link-wrapper{
+        margin-top: 20px;
+    }
+    .unsubscribe-page-wrapper .content-detail{
+        font-size: 17px;
+    }
+    .unsubscribe-modal .modal-body{
+        padding: 0 15px 20px;
+    }
+    .unsubscribe-modal .modal-text-2{
+        font-size: 16px !important;
+    }
+    .unsubscribe-modal .contant-link-wrapper.modal-info-link a{
+        font-size: 14px !important;
+    }
+    .unsubscribe-modal .modal-text-1{
+        margin: 20px 0 !important;
+    }
+    .custom-modal-ui .modal-text-1{
+        font-size: 20px !important;
+    }
+}
