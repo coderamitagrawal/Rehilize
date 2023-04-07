@@ -16,8 +16,7 @@ const validationSchema = Yup.object().shape({
 });
 
 const Candidate = () => {
-
-  const location = useLocation()
+  const location = useLocation();
 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -27,8 +26,7 @@ const Candidate = () => {
   });
 
   const postCandidate = (values) => {
-    
-    axios.post(candBaseUrl,{}).then(
+    axios.post(candBaseUrl, {}).then(
       (response) => {
         setResponse({ success: response.data.success });
         setShow(true);
@@ -39,14 +37,14 @@ const Candidate = () => {
     );
   };
 
-  useEffect(()=>{
-    if(location.pathname == '/candidate'){
+  useEffect(() => {
+    if (location.pathname == "/candidate") {
       window.scrollTo({
         top: 0,
         behavior: "smooth",
       });
     }
-  },[])
+  }, []);
 
   return (
     <div className="main-wrapper mt-0">
@@ -105,12 +103,12 @@ const Candidate = () => {
                   // subscribeNewsLetter: false,
                   // subscribeSpecialAnnouncements: false,
                   // subscribeServces: false,
-                  formType:"Candidate"
+                  formType: "Candidate",
                 }}
                 validationSchema={validationSchema}
-                onSubmit={(values,{resetForm}) => {
+                onSubmit={(values, { resetForm }) => {
                   postCandidate(values);
-                  resetForm({values:""})
+                  resetForm({ values: "" });
                 }}
               >
                 {({ handleSubmit, handleChange, errors, touched, values }) => (
@@ -203,7 +201,10 @@ const Candidate = () => {
                         >
                           <Form.Label>SIGN ME UP</Form.Label>
                           <div className="form-check check-right check-big">
-                            <label className="form-check-label" htmlFor="accept">
+                            <label
+                              className="form-check-label"
+                              htmlFor="accept"
+                            >
                               Yes, I would like to receive email according to my
                               subscription preferences. I understand I can
                               unsubscribe at any time.
@@ -211,7 +212,7 @@ const Candidate = () => {
                             <input
                               className="form-check-input"
                               type="checkbox"
-                             checked={values.signupMe}
+                              checked={values.signupMe}
                               onChange={handleChange}
                               id="signupMe"
                             />
@@ -268,7 +269,7 @@ const Candidate = () => {
                         className="btn button-dark mb-4 mt-5 text-uppercase"
                       >
                         Submit
-                      </Button> 
+                      </Button>
                       <h5
                         className={response.success ? "successMsg" : "errorMsg"}
                       >

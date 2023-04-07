@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { candBaseUrl } from "../../utils/Config";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams,useLocation } from "react-router-dom";
 import { Row, Col, Form, Button, Container } from "react-bootstrap";
 import { Formik } from "formik";
 import "./Style.css";
@@ -14,8 +14,18 @@ const UnSubscribeCandidate = () => {
   const [isMessage, setIsMessate] = useState("");
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
-  const [state, setState] = useState([]);
+  const [objectKey, setObjectKey] = useState([]);
   const params = useParams();
+  const location =useLocation()
+  useEffect(() => {
+    if (location.pathname === `/unsubscribe/candidate/${params.id}`) {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    }
+  }, []);
+
 
   useEffect(() => {
     axios.get(`${candBaseUrl}/${params.id}`).then(
@@ -39,7 +49,7 @@ const UnSubscribeCandidate = () => {
       values?.sixCheck,
       values?.sevenCheck,
     ];
-    state.push({ unsubscribeReason: formData });
+    objectKey.push({ unsubscribeReason: formData });
     const updateUnsubscriberEmp = {
       email: getCandidateData?.success[0].email,
       firstName: getCandidateData?.success[0].firstName,
@@ -47,23 +57,23 @@ const UnSubscribeCandidate = () => {
       lastName: getCandidateData?.success[0].lastName,
       lastName: getCandidateData?.success[0].lastName,
       signupMe: false,
-      unsubscribeReason: state[0].unsubscribeReason,
+      unsubscribeReason: objectKey[0].unsubscribeReason,
     };
-    
+
     const check = formData?.filter((item) => {
       return item == true;
     });
-    
+
     if (check.length > 0) {
       axios.put(`${candBaseUrl}`, updateUnsubscriberEmp).then(
         (response) => {
-          setUpdateCandidate({ success: response.data });
+          setUpdateCandidate({ success: response.data?.success });
         },
         (error) => {
           setUpdateCandidate({ error: error.message });
         }
-        );
-        setShow(true);
+      );
+      setShow(true);
     } else {
       setIsMessate("Please Select Minimum one option compulsory!");
     }
@@ -83,7 +93,10 @@ const UnSubscribeCandidate = () => {
                 If you would like to continue to receive emails but wish to
                 reduce the frequency or update the type <br></br>of messages,
                 please{" "}
-                <Link to={`/candidate/setting/${params.id}`} className="unsubscribe-link">
+                <Link
+                  to={`/candidate/setting/${params.id}`}
+                  className="unsubscribe-link"
+                >
                   click here
                 </Link>{" "}
                 to change your preferences.
@@ -237,6 +250,19 @@ const UnSubscribeCandidate = () => {
                     >
                       Submit
                     </Button>
+
+                    <div>
+                      <h5
+                        className={
+                          updateCandidate?.success ? "successMsg" : "errorMsg"
+                        }
+                      >
+                        {updateCandidate?.success
+                          ? updateCandidate?.success
+                          : updateCandidate?.error}
+                      </h5>
+                    </div>
+
                     <div className="contant-link-wrapper ">
                       <a target="_blank" href="mailto:info@rhrealize.com">
                         info@rhrealize.com

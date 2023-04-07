@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Col, Row, Button, Form, Container } from "react-bootstrap";
 import { Formik } from "formik";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams,useLocation } from "react-router-dom";
 import "./Employer.css";
 import linkedinIcon from "../../Assets/img/linkedIn-logo.png";
 import { empBaseUrl } from "../../utils/Config";
 import axios from "axios";
 import EmailSettingPopup from "../ModalPopUp/EmailSettingPopup";
-import '../Unsubscribe/Style.css'
+import "../Unsubscribe/Style.css";
 
 const EmployerSettingForm = () => {
   const params = useParams();
@@ -15,8 +15,17 @@ const EmployerSettingForm = () => {
   const [updateEmailSetting, setUpdateEmailSetting] = useState();
   const [isMessage, setIsMessage] = useState("");
   const [show, setShow] = useState(false);
-  const [state, setState] = useState([]);
+  const [objectKey, setObjectKey] = useState([]);
   const handleClose = () => setShow(false);
+  const location =useLocation()
+  useEffect(() => {
+    if (location.pathname === `/employer/setting/${params.id}`) {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+  }, []);
 
   useEffect(() => {
     axios.get(`${empBaseUrl}/${params.id}`).then(
@@ -38,7 +47,10 @@ const EmployerSettingForm = () => {
     ];
     const unsubscribeAllEmail = [values?.fourthCheck];
     const checkForAllValidation = formData.concat(unsubscribeAllEmail);
-    state.push({ emailSetting: formData, unsubscribeAllEmail: unsubscribeAllEmail });
+    objectKey.push({
+      emailSetting: formData,
+      unsubscribeAllEmail: unsubscribeAllEmail,
+    });
     const updatEmailSetting = {
       email: getEmployeeSetting?.success[0].email,
       firstName: getEmployeeSetting?.success[0].firstName,
@@ -46,8 +58,8 @@ const EmployerSettingForm = () => {
       lastName: getEmployeeSetting?.success[0].lastName,
       lastName: getEmployeeSetting?.success[0].lastName,
       signupMe: false,
-      emailSetting: state[0].emailSetting,
-      unsubscribeAllEmail: state[0].unsubscribeAllEmail,
+      emailSetting: objectKey[0].emailSetting,
+      unsubscribeAllEmail: objectKey[0].unsubscribeAllEmail,
     };
 
     const check = checkForAllValidation?.filter((item) => {
@@ -57,7 +69,7 @@ const EmployerSettingForm = () => {
     if (check.length > 0) {
       axios.put(`${empBaseUrl}`, updatEmailSetting).then(
         (response) => {
-          setUpdateEmailSetting({ success: response.data });
+          setUpdateEmailSetting({ success: response.data?.success });
         },
         (error) => {
           setUpdateEmailSetting({ error: error.message });
@@ -193,6 +205,21 @@ const EmployerSettingForm = () => {
                     >
                       Submit
                     </Button>
+
+                    <div>
+                      <h5
+                        className={
+                          updateEmailSetting?.success
+                            ? "successMsg"
+                            : "errorMsg"
+                        }
+                      >
+                        {updateEmailSetting?.success
+                          ? updateEmailSetting?.success
+                          : updateEmailSetting?.error}
+                      </h5>
+                    </div>
+
                     <div className="contant-link-wrapper my-3">
                       <a target="_blank" href="mailto:info@rhrealize.com">
                         info@rhrealize.com

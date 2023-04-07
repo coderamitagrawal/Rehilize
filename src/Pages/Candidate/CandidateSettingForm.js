@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Col, Row, Button, Form, Container } from "react-bootstrap";
 import { Formik } from "formik";
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import "./Candidate.css";
 import linkedinIcon from "../../Assets/img/linkedIn-logo.png";
 import axios from "axios";
@@ -15,8 +15,17 @@ const CandidateSettingForm = () => {
   const [updateEmailSetting, setUpdateEmailSetting] = useState();
   const [isMessage, setIsMessage] = useState("");
   const [show, setShow] = useState(false);
-  const [state, setState] = useState([]);
+  const [objectKey , setObjectKey] = useState([]);
   const handleClose = () => setShow(false);
+  const location =useLocation()
+  useEffect(()=>{
+    if(location.pathname === `/candidate/setting/${params.id}`){
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+  },[])
 
   useEffect(() => {
     axios.get(`${candBaseUrl}/${params.id}`).then(
@@ -38,7 +47,7 @@ const CandidateSettingForm = () => {
     ];
     const unsubscribeAllEmail = [values?.fourthCheck];
     const checkForAllValidation = formData.concat(unsubscribeAllEmail);
-    state.push({
+    objectKey.push({
       emailSetting: formData,
       unsubscribeAllEmail: unsubscribeAllEmail,
     });
@@ -49,8 +58,8 @@ const CandidateSettingForm = () => {
       lastName: getCandidateSetting?.success[0].lastName,
       lastName: getCandidateSetting?.success[0].lastName,
       signupMe: false,
-      emailSetting: state[0].emailSetting,
-      unsubscribeAllEmail: state[0].unsubscribeAllEmail,
+      emailSetting: objectKey[0].emailSetting,
+      unsubscribeAllEmail: objectKey[0].unsubscribeAllEmail,
     };
     const check = checkForAllValidation?.filter((item) => {
       return item == true;
@@ -70,7 +79,6 @@ const CandidateSettingForm = () => {
       setIsMessage("Please Select Minimum one option compulsory!");
     }
   };
-
 
   return (
     <div className="unsubscribe-page-wrapper">
@@ -196,17 +204,21 @@ const CandidateSettingForm = () => {
                     >
                       Submit
                     </Button>
-                
-                     <h5
-                       className={
-                         updateEmailSetting?.success ? "successMsg" : "errorMsg"
-                       }
-                     >
-                       {updateEmailSetting?.success
-                         ? updateEmailSetting?.success
-                         : updateEmailSetting?.error}
-                     </h5> 
-                
+
+                    <div>
+                      <h5
+                        className={
+                          updateEmailSetting?.success
+                            ? "successMsg"
+                            : "errorMsg"
+                        }
+                      >
+                        {updateEmailSetting?.success
+                          ? updateEmailSetting?.success
+                          : updateEmailSetting?.error}
+                      </h5>
+                    </div>
+
                     <div className="contant-link-wrapper my-3">
                       <a target="_blank" href="mailto:info@rhrealize.com">
                         info@rhrealize.com
